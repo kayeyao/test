@@ -14,7 +14,7 @@ def introduction():
     image = Image.open('logo/nyoy_pic.PNG').convert('RGB')
     st.image(image, caption='', width=800, height=300)
     st.write('')
-    st.header('Tuloy Pa Rin')
+    st.header(<b>'Tuloy Pa Rin'</b>, unsafe_allow_html=True)
     st.header('Client: Nyoy Volante')
     st.write('Nyoy Volante is a Filipino singer and songwriter, initially dubbed as "The Prince of Acoustic Pop" turned "The King of Philippine Acoustic Pop."')
     st.write('Nyoy Volante wants to jumpstart his 2021 music career. He wishes to land a spot in the Spotify PH Top Daily 200.')
@@ -27,8 +27,8 @@ def dataset():
     st.write('')
     st.header('Spotify Data Set')
     
-    st.write('<b>Top 200 Daily Charts:</b>')
-    st.write('<b>Date Range</b>: January 1, 2017 - December 31, 2020')
+    st.write('<b>Top 200 Daily Charts:</b>', unsafe_allow_html=True)
+    st.write('<b>Date Range</b>: January 1, 2017 - December 31, 2020', unsafe_allow_html=True)
 
     dailychart = {
                       'Column Name': ['date', 'position', 'track_id', 'track_name', 'artist', 'streams'], 
@@ -49,7 +49,7 @@ def dataset():
 			}
     st.table(audiofeatures)
 
-    st.markdown('<b>Playlist Date:</b>', unsafe_allow_html=True)
+    st.markdown('<b>Playlist Data:</b>', unsafe_allow_html=True)
 
     playlistdata = {
                       'Column Name': ['playlist_id','playlist_name','playlist_total_tracks','owner_id','owner_name','total_followers'],
@@ -92,7 +92,7 @@ def eda():
     st.write('')
     st.header('Exploratory Data Analysis')
     st.write('-----------------------------------------------------------------------') 
-    st.write('<b>Popular Genres in the Philippines</b>')
+    st.write('<b>Popular Genres in the Philippines</b>', unsafe_allow_html=True)
     
 
 def genre_classification():
@@ -108,8 +108,15 @@ def recommenderengine():
     st.write('')
     st.header('Recommended Artist Collaborations')
     st.write('-----------------------------------------------------------------------') 
-    st.write('') 
-
+    st.write('')
+    option = st.selectbox('Possible genres of artists Nyoy can collaborate with',('Acoustic','Rock','R&B'))
+    st.write('Under the genre ', option, ', it is highly recommended for Nyoy to collaborate with the following artists.')
+    if option == 'Acoustic':
+	st.write('Acoustic')
+    elif option == 'Rock':
+	st.write('Rock')
+    elif option == 'R&B':
+	st.write('R&B')
 
 def conclusion():
     caching.clear_cache()
