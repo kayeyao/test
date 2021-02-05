@@ -99,6 +99,7 @@ def eda():
     st.write('-----------------------------------------------------------------------') 
     st.write('<b>Popular Genres in the Philippines</b>', unsafe_allow_html=True)
     
+    
 
 def genre_classification():
     caching.clear_cache()
@@ -106,12 +107,30 @@ def genre_classification():
     st.header('Song Genre Classification')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
+    st.write('Tracks obtained from various playlists of different genres were trained for genre classification.')
     st.subheader('Chosen Genres:')
     st.write('- Acoustic, Classical, Reggae, Rock, R&B') 
     st.subheader('Chosen Features:')
     st.write('- Danceability, Energy, Key, Loudness, Mode, Speechiness, Acousticness, Instrumentalness, Valence, Tempo')
-    xgboost = pd.read_pickle('xgboost.model.pickl')
-    st.write(xgboost)
+    st.subheader('Selected Model')
+    st.write('- XGBoost')
+    st.write('- Accuracy: 77.93%')
+    st.write('Results of other models')
+    option = st.selectbox('Select Model',('kNN','SVM - Linear','SVM - Polynomial','SVM - RBF','Decision Trees','Random Forest','XGBoost'))
+    st.write('Here are the results obtained from the', option, 'model.')
+    if option == 'kNN':
+        
+    elif option == 'SVM - Linear':
+        
+    elif option == 'SVM - Polynomial':
+        
+    elif option == 'SVM - RBF':
+        
+    elif option == 'Decision Trees':
+    
+    elif option == 'Random Forest':
+        
+    elif option == 'XGBoost':
 
 
 def recommenderengine():
