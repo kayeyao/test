@@ -15,7 +15,7 @@ import app_body as body
 
 warnings.filterwarnings('ignore')
 
-st.title('Tuloy Pa Rin by Nyoy Volante')
+st.title('Spotify Data Analysis')
 
 ## Side Bar Information
 image = Image.open('logo/eskwelabs.png')
