@@ -113,8 +113,7 @@ def genre_classification():
     st.subheader('Chosen Features:')
     st.write('- Danceability, Energy, Key, Loudness, Mode, Speechiness, Acousticness, Instrumentalness, Valence, Tempo')
     st.subheader('Selected Model')
-    st.write('- XGBoost')
-    st.write('- Accuracy: 77.93%')
+    st.write('- XGBoost \ - Accuracy: 77.93%')
     st.subheader('Results of other models')
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
@@ -147,7 +146,7 @@ def recommenderengine():
                      'Number of Songs': ['','','']
                        }
     st.table(nyoygenre)
-    st.write('Top artists for Nyoy to collaborate with.')
+    st.subheader('Top artists for Nyoy to collaborate with.')
     option = st.selectbox('Select genre',('Acoustic','Rock','R&B'))
     st.write('Under the genre ', option, ', it is highly recommended for Nyoy to collaborate with the following artists.')
     if option == 'Acoustic':
@@ -170,9 +169,10 @@ def contributors():
     st.header('Contributors')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
-
+    
+    
+    st.write('Emerson Fili Chua - Mentor')
     st.write('Generoso Roberto')
     st.write('Kaye Janelle Yao')
     st.write('Rodel Arenas')
     st.write('Tyron Rex Frago')
-    st.write('Emerson Fili Chua - Mentor')
