@@ -50,7 +50,7 @@ def dataset():
 			}
     st.table(audiofeatures)
 
-    st.markdown('<b>Playlist Data:</b>', unsafe_allow_html=True)
+    st.subheader('Playlist Data:')
 
     playlistdata = {
                       'Column Name': ['playlist_id','playlist_name','playlist_total_tracks','owner_id','owner_name','total_followers'],
@@ -120,8 +120,7 @@ def recommenderengine():
     st.header('Recommended Artist Collaborations')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
-    st.write('Possible genres of artists Nyoy can collaborate with')
-    option = st.selectbox(('Acoustic','Rock','R&B'))
+    option = st.selectbox('Possible genres of artists Nyoy can collaborate with',('Acoustic','Rock','R&B'))
     st.write('Under the genre ', option, ', it is highly recommended for Nyoy to collaborate with the following artists.')
     if option == 'Acoustic':
         st.write('Acoustic')
