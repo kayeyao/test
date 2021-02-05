@@ -82,7 +82,7 @@ def tools():
     image = Image.open('logo/matplotlib.png').convert('RGB')
     st.image(image, caption='', width=300, height=150)
     image = Image.open('logo/numpy.png').convert('RGB')
-    st.image(image, caption='', width=300, heigh t=150)
+    st.image(image, caption='', width=300, height=150)
 
 def cleaning():
     st.write('')
