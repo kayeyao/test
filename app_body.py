@@ -144,7 +144,7 @@ def recommenderengine():
     
     nyoygenre = {
                       'Genre': ['Acoustic','Rock','R&B'],
-                     'Number of Songs': ['','',''
+                     'Number of Songs': ['','','']
                        }
     st.table(nyoygenre)
     st.write('Top artists for Nyoy to collaborate with.')
