@@ -36,7 +36,7 @@ def dataset():
                       'Description': ['Daily Chart Date', 'Song Charting Position', 'Song Unique Identifier', 'Song Name', 'Name of Singer', 'Total Number of Daily Streams'],
                       'Sample Data': ['2020-12-31','200','2S80c51YXgJQhkhX603fMA','Prinsesa','6cyclemind','17516']
 			}
-    st.table(dailychart)
+    st.table(dailychart.assign(hack='').set_index('hack'))
 
     st.subheader('Track Audio Features:')
 
@@ -115,7 +115,7 @@ def genre_classification():
     st.subheader('Selected Model')
     st.write('- XGBoost')
     st.write('- Accuracy: 77.93%')
-    st.write('Results of other models')
+    st.subheader('Results of other models')
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
@@ -132,6 +132,7 @@ def genre_classification():
         st.write('')
     elif option == 'XGBoost':
         st.write('')
+   
 
 def recommenderengine():
     caching.clear_cache()
@@ -139,7 +140,15 @@ def recommenderengine():
     st.header('Recommended Artist Collaborations')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
-    option = st.selectbox('Possible genres of artists Nyoy can collaborate with',('Acoustic','Rock','R&B'))
+    st.subheader('Genre Classification of Nyoy's songs')
+    
+    nyoygenre = {
+                      'Genre': ['Acoustic','Rock','R&B'],
+                     'Number of Songs': ['','',''
+                          }
+    st.table(nyoygenre)
+    st.write('Top artists for Nyoy to collaborate with.')
+    option = st.selectbox('Select genre',('Acoustic','Rock','R&B'))
     st.write('Under the genre ', option, ', it is highly recommended for Nyoy to collaborate with the following artists.')
     if option == 'Acoustic':
         st.write('Acoustic')
