@@ -42,7 +42,7 @@ def dataset():
     audiofeatures = {
                       'Column Name': ['duration_ms', 'key', 'mode', 'acousticness', 'danceability', 'energy','instrumentalness','liveness','loudness','speechiness','valence','tempo'], 
                       'Desription': ['The duration of the track in milliseconds','The key the track is in','Indicates the modality (major or minor) of a track, the type of scale from which it is melodic',
-				'A confidence measure from 0.0 to 1.0 of whether the track is acoustic,'Describes how suitable a track is for dancing based on a combination of musical elements including tempo, 
+				'A confidence measure from 0.0 to 1.0 of whether the track is acoustic','Describes how suitable a track is for dancing based on a combination of musical elements including tempo, 
 				rhythm stability, beat strength, and overall regularity','A measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.','Predicts whether a track contains no vocals.',
 				'Detects the presence of an audience in the recording.','The overall loudness of a track in decibels (dB).','Detects the presence of spoken words in a track.','A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.',
 				'The overall estimated tempo of a track in beats per minute (BPM).']
