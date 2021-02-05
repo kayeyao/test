@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 st.title('Tuloy Pa Rin by Nyoy Volante')
 
 ## Side Bar Information
-image = Image.open('eskwelabs.png')
+image = Image.open('logo/eskwelabs.png')
 st.sidebar.image(image, caption='', use_column_width=True)
 st.sidebar.markdown("<h1 style='text-align: center;margin-bottom:50px'>DS Cohort VI</h1>", unsafe_allow_html=True)
 
