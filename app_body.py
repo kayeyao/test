@@ -9,8 +9,8 @@ import streamlit as st
 from PIL import Image
 from streamlit_folium import folium_static
 from streamlit import caching
-#from xgboost import XGBClassifier
-from sklearn.svm import SVC
+#import xgboost
+#import sklearn
 
 def introduction():
     image = Image.open('logo/nyoy_pic.PNG').convert('RGB')
@@ -156,31 +156,31 @@ def genre_classification():
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
-        pickle = pd.read_pickle('knn.model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('knn.model.pickl')
+        #st.write(pickle)
     elif option == 'SVM Linear':
-        pickle = pd.read_pickle('svm (linear kernel).model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('svm (linear kernel).model.pickl')
+        #st.write(pickle)
         st.write('')
     elif option == 'SVM Polynomial':
-        pickle = pd.read_pickle('svm (polynomial kernel).model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('svm (polynomial kernel).model.pickl')
+        #st.write(pickle)
         st.write('')
     elif option == 'SVM RBF':
-        pickle = pd.read_pickle('svm (rbf kernel).model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('svm (rbf kernel).model.pickl')
+        #st.write(pickle)
         st.write('')
     elif option == 'Decision Trees':
-        pickle = pd.read_pickle('decision tree.model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('decision tree.model.pickl')
+        #st.write(pickle)
         st.write('')
     elif option == 'Random Forest':
-        pickle = pd.read_pickle('random forest.model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('random forest.model.pickl')
+        #st.write(pickle)
         st.write('')
     elif option == 'XGBoost':
-        pickle = pd.read_pickle('xgboost.model.pickl')
-        st.write(pickle)
+        #pickle = pd.read_pickle('xgboost.model.pickl')
+        #st.write(pickle)
         st.write('')
    
 
