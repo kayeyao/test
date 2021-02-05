@@ -11,7 +11,7 @@ from streamlit_folium import folium_static
 from streamlit import caching
 
 def introduction():
-    image = Image.open('nyoy_pic.png').convert('RGB')
+    image = Image.open('logo/nyoy_pic.png').convert('RGB')
     st.image(image, caption='', width=300, height=150)
     st.write('')
     st.header('Client: Nyoy Volante')
