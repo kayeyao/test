@@ -116,15 +116,15 @@ def genre_classification():
     st.write('- XGBoost')
     st.write('- Accuracy: 77.93%')
     st.write('Results of other models')
-    option = st.selectbox('Select Model',('kNN','SVM - Linear','SVM - Polynomial','SVM - RBF','Decision Trees','Random Forest','XGBoost'))
+    option = st.selectbox('Select Model',('kNN','SVM: Linear','SVM: Polynomial','SVM: RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
         
-    elif option == 'SVM - Linear':
+    elif option == 'SVM: Linear':
         
-    elif option == 'SVM - Polynomial':
+    elif option == 'SVM: Polynomial':
         
-    elif option == 'SVM - RBF':
+    elif option == 'SVM: RBF':
         
     elif option == 'Decision Trees':
     
