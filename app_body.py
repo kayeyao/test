@@ -140,7 +140,7 @@ def recommenderengine():
     st.header('Recommended Artist Collaborations')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
-    st.subheader('Genre Classification of Nyoy's songs')
+    st.subheader("Genre Classification of Nyoy's songs")
     
     nyoygenre = {
                       'Genre': ['Acoustic','Rock','R&B'],
