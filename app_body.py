@@ -9,7 +9,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_folium import folium_static
 from streamlit import caching
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 
 def introduction():
     image = Image.open('logo/nyoy_pic.PNG').convert('RGB')
