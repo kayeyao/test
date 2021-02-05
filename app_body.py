@@ -112,11 +112,11 @@ def recommenderengine():
     option = st.selectbox('Possible genres of artists Nyoy can collaborate with',('Acoustic','Rock','R&B'))
     st.write('Under the genre ', option, ', it is highly recommended for Nyoy to collaborate with the following artists.')
     if option == 'Acoustic':
-	st.write('Acoustic')
-    elif option == 'Rock':
-	st.write('Rock')
+		st.write('Acoustic')
+    elif option == 'Rock': 
+	        st.write('Rock')
     elif option == 'R&B':
-	st.write('R&B')
+		st.write('R&B')
 
 def conclusion():
     caching.clear_cache()
