@@ -36,7 +36,7 @@ def dataset():
                       'Description': ['Daily Chart Date', 'Song Charting Position', 'Song Unique Identifier', 'Song Name', 'Name of Singer', 'Total Number of Daily Streams'],
                       'Sample Data': ['2020-12-31','200','2S80c51YXgJQhkhX603fMA','Prinsesa','6cyclemind','17516']
 			}
-    st.table(dailychart.assign(hack='').set_index('hack'))
+    st.table(dailychart)
 
     st.subheader('Track Audio Features:')
 
