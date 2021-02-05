@@ -119,17 +119,11 @@ def genre_classification():
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
-        
     elif option == 'SVM Linear':
-        
     elif option == 'SVM Polynomial':
-        
     elif option == 'SVM RBF':
-        
     elif option == 'Decision Trees':
-    
     elif option == 'Random Forest':
-        
     elif option == 'XGBoost':
 
 
