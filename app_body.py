@@ -114,12 +114,13 @@ def genre_classification():
     st.write('- Danceability, Energy, Key, Loudness, Mode, Speechiness, Acousticness, Instrumentalness, Valence, Tempo')
     st.subheader('Selected Model')
     st.write('- XGBoost')
-    st.write('- Accuracy: 77.93%')
+    st.write('- Accuracy : 77.93%')
     st.subheader('Results of other models')
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
-        st.write('')
+        pickle = pd.read_pickle('xgboost.model.pickl.pkl')
+        st.write(pickle)
     elif option == 'SVM Linear':
         st.write('')
     elif option == 'SVM Polynomial':
