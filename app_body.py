@@ -119,13 +119,19 @@ def genre_classification():
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
+        st.write('')
     elif option == 'SVM Linear':
+        st.write('')
     elif option == 'SVM Polynomial':
+        st.write('')
     elif option == 'SVM RBF':
+        st.write('')
     elif option == 'Decision Trees':
+        st.write('')
     elif option == 'Random Forest':
+        st.write('')
     elif option == 'XGBoost':
-
+        st.write('')
 
 def recommenderengine():
     caching.clear_cache()
