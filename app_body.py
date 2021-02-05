@@ -14,7 +14,7 @@ def introduction():
     image = Image.open('logo/nyoy_pic.PNG').convert('RGB')
     st.image(image, caption='', width=800, height=300)
     st.write('')
-    st.header(<b>'Tuloy Pa Rin'</b>, unsafe_allow_html=True)
+    st.header('<b>Tuloy Pa Rin</b>', unsafe_allow_html=True)
     st.header('Client: Nyoy Volante')
     st.write('Nyoy Volante is a Filipino singer and songwriter, initially dubbed as "The Prince of Acoustic Pop" turned "The King of Philippine Acoustic Pop."')
     st.write('Nyoy Volante wants to jumpstart his 2021 music career. He wishes to land a spot in the Spotify PH Top Daily 200.')
