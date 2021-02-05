@@ -16,9 +16,10 @@ def introduction():
     st.write('')
     st.header('Tuloy Pa Rin')
     st.subheader('Client: Nyoy Volante')
-    st.write('Nyoy Volante is a Filipino singer and songwriter, initially dubbed as "The Prince of Acoustic Pop" turned "The King of Philippine Acoustic Pop."')
-    st.write('Nyoy Volante wants to jumpstart his 2021 music career. He wishes to land a spot in the Spotify PH Top Daily 200.')
+    st.write('Nyoy Volante is a Filipino singer and songwriter, initially dubbed as "The Prince of Acoustic Pop" turned "The King of Philippine Acoustic Pop." Nyoy began his music career in the early 2000s, releasing hit songs such as Nasaan Ka Na and Someday. His song Tuloy Pa Rin, released in 2012, even landed in the Top 200 PH Daily Charts on Spotify.')
+    st.write('Nyoy Volante wants to jumpstart his 2021 music career and wishes to land a spot in the Spotify PH Top Daily 200 once more. What should his next move be this 2021?')
     st.subheader('Business Objectives')
+    st.write('To help Nyoy land his second spot in the coveted Top Daily 200, the following objectives must be met:')  
     st.write('1. Identify popular music genres in the Philippines.')
     st.write('2. Determine genres Nyoy can venture into.')
     st.write('3. Provide a list of potential artirts Nyoy can collaborate with.')
@@ -81,11 +82,15 @@ def tools():
     image = Image.open('logo/matplotlib.png').convert('RGB')
     st.image(image, caption='', width=300, height=150)
     image = Image.open('logo/numpy.png').convert('RGB')
-    st.image(image, caption='', width=300, height=150)
+    st.image(image, caption='', width=300, heigh t=150)
 
 def cleaning():
     st.write('')
     st.header('Data Cleaning')
+    st.write('-----------------------------------------------------------------------') 
+    st.write('1. Merge Top 200 Daily Charts from 2017 - 2020 with the corresponding Artists and Tracks Data.')
+    st.write('2. Add the Genre Classification obtained from the Playlist Data with the in the dataset above.')
+    st.write('3. Drop duplicated data based on track_id.')
 
 def eda():
     caching.clear_cache()
@@ -101,6 +106,12 @@ def genre_classification():
     st.header('Song Genre Classification')
     st.write('-----------------------------------------------------------------------') 
     st.write('')
+    st.subheader('Chosen Genres:')
+    st.write('- Acoustic, Classical, Reggae, Rock, R&B') 
+    st.subheader('Chosen Features:')
+    st.write('- Danceability, Energy, Key, Loudness, Mode, Speechiness, Acousticness, Instrumentalness, Valence, Tempo')
+    xgboost = pd.read_pickle('model/xgboost.model.pickl')
+    st.write(xgboost)
 
 
 def recommenderengine():
