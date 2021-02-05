@@ -158,6 +158,7 @@ def genre_classification():
     if option == 'kNN':
         #pickle = pd.read_pickle('knn.model.pickl')
         #st.write(pickle)
+        st.write('')
     elif option == 'SVM Linear':
         #pickle = pd.read_pickle('svm (linear kernel).model.pickl')
         #st.write(pickle)
