@@ -28,7 +28,7 @@ def dataset():
     st.write('')
     st.header('Spotify Data Set')
     
-    st.write('<b>Top 200 Daily Charts:</b>', unsafe_allow_html=True)
+    st.subheader('Top 200 Daily Charts:')
     st.write('<b>Date Range</b>: January 1, 2017 - December 31, 2020', unsafe_allow_html=True)
 
     dailychart = {
@@ -38,7 +38,7 @@ def dataset():
 			}
     st.table(dailychart)
 
-    st.markdown('<b>Track Audio Features:</b>', unsafe_allow_html=True)
+    st.subheader('Track Audio Features:')
 
     audiofeatures = {
                       'Column Name': ['duration_ms', 'key', 'mode', 'acousticness', 'danceability', 'energy','instrumentalness','liveness','loudness','speechiness','valence','tempo'], 
@@ -89,7 +89,7 @@ def cleaning():
     st.header('Data Cleaning')
     st.write('-----------------------------------------------------------------------') 
     st.write('1. Merge Top 200 Daily Charts from 2017 - 2020 with the corresponding Artists and Tracks Data.')
-    st.write('2. Add the Genre Classification obtained from the Playlist Data with the in the dataset above.')
+    st.write('2. Add the Genre Classification obtained from the Playlist Data in the dataset above.')
     st.write('3. Drop duplicated data based on track_id.')
 
 def eda():
@@ -110,7 +110,7 @@ def genre_classification():
     st.write('- Acoustic, Classical, Reggae, Rock, R&B') 
     st.subheader('Chosen Features:')
     st.write('- Danceability, Energy, Key, Loudness, Mode, Speechiness, Acousticness, Instrumentalness, Valence, Tempo')
-    xgboost = pd.read_pickle('model/xgboost.model.pickl')
+    xgboost = pd.read_pickle('xgboost.model.pickl')
     st.write(xgboost)
 
 
