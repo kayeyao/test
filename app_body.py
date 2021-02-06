@@ -154,11 +154,6 @@ def genre_classification():
     st.write('- Accuracy : 77.93%')
     st.subheader('Results of other models')
 
-    image = Image.open('graphs/knn.PNG').convert('RGB')
-    st.image(image, caption='', width=100, height=100) 
-    image = Image.open('graphs/knn.PNG').convert('RGB')
-    st.image(image, caption='', width=100, height=100) 
-
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
@@ -175,7 +170,7 @@ def genre_classification():
         st.image(image, caption='', width=500, height=300) 
     elif option == 'Decision Trees':
         image = Image.open('graphs/decision tree.PNG').convert('RGB')
-        st.image(image, caption='', width=400, height=200) 
+        st.image(image, caption='', width=500, height=300) 
     elif option == 'Random Forest':
         image = Image.open('graphs/random forest.PNG').convert('RGB')
         st.image(image, caption='', width=550, height=300) 
