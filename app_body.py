@@ -156,33 +156,26 @@ def genre_classification():
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
-        knn = pickle.load((open('knn.model.pickl','rb'))
-        st.read(knn)
-        st.write('')
+        image = Image.open('graphs/knn.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'SVM Linear':
-        #pickle = pd.read_pickle('svm (linear kernel).model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/svm linear.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'SVM Polynomial':
-        #pickle = pd.read_pickle('svm (polynomial kernel).model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/svm polynomial.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'SVM RBF':
-        #pickle = pd.read_pickle('svm (rbf kernel).model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/svm rbf.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'Decision Trees':
-        #pickle = pd.read_pickle('decision tree.model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/decision trees.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'Random Forest':
-        #pickle = pd.read_pickle('random forest.model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/random forest.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
     elif option == 'XGBoost':
-        #pickle = pd.read_pickle('xgboost.model.pickl')
-        #st.write(pickle)
-        st.write('')
+        image = Image.open('graphs/xgboost.PNG').convert('RGB')
+        st.image(image, caption='', width=400, height=200) 
    
 
 def recommenderengine():
