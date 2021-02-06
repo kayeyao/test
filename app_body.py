@@ -156,8 +156,8 @@ def genre_classification():
     option = st.selectbox('Select Model',('kNN','SVM Linear','SVM Polynomial','SVM RBF','Decision Trees','Random Forest','XGBoost'))
     st.write('Here are the results obtained from the', option, 'model.')
     if option == 'kNN':
-        pickle = pickle.load('knn.model.pickl')
-        st.write(pickle)
+        knn = pickle.load('knn.model.pickl')
+        st.write(knn)
         st.write('')
     elif option == 'SVM Linear':
         #pickle = pd.read_pickle('svm (linear kernel).model.pickl')
