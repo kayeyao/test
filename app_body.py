@@ -166,19 +166,19 @@ def genre_classification():
         st.image(image, caption='', width=400, height=200) 
     elif option == 'SVM Linear':
         image = Image.open('graphs/svm linear.PNG').convert('RGB')
-        st.image(image, caption='', width=400, height=200) 
+        st.image(image, caption='', width=500, height=300) 
     elif option == 'SVM Polynomial':
         image = Image.open('graphs/svm polynomial.PNG').convert('RGB')
-        st.image(image, caption='', width=400, height=200) 
+        st.image(image, caption='', width=550, height=300) 
     elif option == 'SVM RBF':
         image = Image.open('graphs/svm rbf.PNG').convert('RGB')
-        st.image(image, caption='', width=400, height=200) 
+        st.image(image, caption='', width=500, height=300) 
     elif option == 'Decision Trees':
-        image = Image.open('graphs/decision trees.PNG').convert('RGB')
+        image = Image.open('graphs/decision tree.PNG').convert('RGB')
         st.image(image, caption='', width=400, height=200) 
     elif option == 'Random Forest':
         image = Image.open('graphs/random forest.PNG').convert('RGB')
-        st.image(image, caption='', width=400, height=200) 
+        st.image(image, caption='', width=550, height=300) 
     elif option == 'XGBoost':
         image = Image.open('graphs/xgboost.PNG').convert('RGB')
         st.image(image, caption='', width=400, height=200) 
