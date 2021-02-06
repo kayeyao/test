@@ -194,7 +194,7 @@ def recommenderengine():
     st.subheader("Genre Classification of Nyoy's songs")
     
     nyoygenre = {
-                      'Genre': ['Acoustic','Rock','R&B','Classical],
+                      'Genre': ['Acoustic','Rock','R&B','Classical'],
                      'Number of Songs': ['55','18','6','5']
                        }
     st.table(nyoygenre)
