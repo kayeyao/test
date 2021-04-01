@@ -38,7 +38,7 @@ def covid_stats(country,status,length):
 
 		country_stats_merged = country_stats_merged.append(country_stats_timeframe)
 
-	st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
+	#st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
 	if status == 'Daily New Cases':
 		data = country_stats_timeframe[['new_cases','date']]
