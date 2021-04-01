@@ -36,8 +36,9 @@ def covid_stats(country,status,length):
     
 	st.write('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
 
-    	stats = {'Column Name': ['Total Cases', 'New Cases', 'Total Deaths', 'New Deaths', 'Total Vaccinations'], 
-                 'Sample Data': [int(latest_status['total_cases'].iloc[0]),int(latest_status['new_cases'].iloc[0]),int(latest_status['total_deaths'].iloc[0]),int(latest_status['new_deaths'].iloc[0]),int(latest_status['total_vaccinations'].iloc[0])]
+	stats = {
+			'': ['Total Cases', 'New Cases', 'Total Deaths', 'New Deaths', 'Total Vaccinations'], 
+                 	'Data as of' + end_date.strftime("%b %d %Y"): [int(latest_status['total_cases'].iloc[0]),int(latest_status['new_cases'].iloc[0]),int(latest_status['total_deaths'].iloc[0]), int(latest_status['new_deaths'].iloc[0]),int(latest_status['total_vaccinations'].iloc[0])]
 		}
     	st.table(stats)
 
