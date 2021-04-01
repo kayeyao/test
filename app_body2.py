@@ -42,13 +42,13 @@ def covid_stats(country,status,length):
 
 	country_stats_graph = pd.DataFrame(columns = ['date'])
 	for x in country:
-		if status == 'Daily New Cases':
+		if status == 'Daily Cases':
 			data = country_stats_merged[country_stats_merged['location']==x][['new_cases','date']].rename(columns={"new_cases": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 		elif status == 'Total Cases':
 			data = country_stats_merged[country_stats_merged['location']==x][['total_cases','date']].rename(columns={"total_cases": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
-		elif status == 'Daily New Deaths':
+		elif status == 'Daily Deaths':
 			data = country_stats_merged[country_stats_merged['location']==x][['new_deaths','date']].rename(columns={"new_deaths": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 		elif status == 'Total Deaths':
@@ -94,7 +94,7 @@ def covid_statistics():
 	col1, col2, col3 = st.beta_columns(3)
 	country = col1.multiselect('Country', countries)
 	
-	status = col2.selectbox('Information',('Daily New Cases','Total Cases','Daily New Deaths','Total Deaths','Total Vaccinations'))
+	status = col2.selectbox('Information',('Daily Cases','Total Cases','Daily Deaths','Total Deaths','Total Vaccinations'))
 
 	length = col3.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
 	
