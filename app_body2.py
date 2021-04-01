@@ -45,14 +45,14 @@ def covid_stats(country,status,length):
 		if status == 'Daily New Cases':
 			data = country_stats_merged[country_stats_merged['location']==x][['new_cases','date']].rename(columns={"new_cases": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date')
-	elif status == 'Total Cases':
-		data = country_stats_merged[['total_cases','date']]
-	elif status == 'Daily New Deaths':
-		data = country_stats_merged[['new_deaths','date']]
-	elif status == 'Total Deaths':
-		data = country_stats_merged[['total_deaths','date']]
-	elif status == 'Total Vaccinations':
-		data = country_stats_merged[['total_vaccinations','date']]  
+		elif status == 'Total Cases':
+			data = country_stats_merged[['total_cases','date']]
+		elif status == 'Daily New Deaths':
+			data = country_stats_merged[['new_deaths','date']]
+		elif status == 'Total Deaths':
+			data = country_stats_merged[['total_deaths','date']]
+		elif status == 'Total Vaccinations':
+			data = country_stats_merged[['total_vaccinations','date']]  
 
 	st.line_chart(data.rename(columns={'date':'index'}).set_index('index'))
 
