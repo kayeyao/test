@@ -22,6 +22,7 @@ def covid_stats(country,status,length):
             country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
     
     if length == 'all':
+	length = 0
         end_date = country_stats['date'].max()
         country_stats_timeframe = country_stats
         latest_status = country_stats[country_stats['date'] == end_date]
