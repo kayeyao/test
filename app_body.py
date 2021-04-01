@@ -34,7 +34,6 @@ def covid_stats(country,status,length):
 		latest_status = country_stats[country_stats['date'] == end_date]
     
 	st.write('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
-	st.write('hello')
 	st.write('\nTotal Cases: ' + str(int(latest_status['total_cases'].iloc[0])))
 	st.write('New Cases: ' + str(int(latest_status['new_cases'].iloc[0])))
 	st.write('Total Deaths: ' + str(int(latest_status['total_deaths'].iloc[0])))
@@ -45,15 +44,15 @@ def covid_stats(country,status,length):
 	plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
 
 	if status == 'Daily New Cases':
-		sns.lineplot(x='date', y='new_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+		st.linechart(x='date', y='new_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
 	elif status == 'Total Cases':
-		sns.lineplot(x='date', y='total_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+		st.linechart(x='date', y='total_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
 	elif status == 'Daily New Deaths':
-		sns.lineplot(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+		st.linechart(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
 	elif status == 'Total Deaths':
-		sns.lineplot(x='date', y='total_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+		st.linechart(x='date', y='total_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
 	elif status == 'Total Vaccinations':
-		sns.lineplot(x='date', y='total_vaccinations',data=country_stats,linewidth=2.5, color = 'green')   
+		st.linechart(x='date', y='total_vaccinations',data=country_stats,linewidth=2.5, color = 'green')   
         
 	plt.xlabel("Date", fontsize = 15)
 	plt.ylabel(f'{status}', fontsize = 15)
