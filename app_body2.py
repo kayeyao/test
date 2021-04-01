@@ -15,23 +15,28 @@ stats['date'] = pd.to_datetime(stats['date'])
 
 
 def covid_stats(country,status,length):
-	country_stats = stats['location'].isin(country).reset_index()
+	country_stats_merged = pd.DataFrame()		
 
-	#for i in range(1, len(country_stats)):
-	#	if country_stats['total_vaccinations'].isnull()[i]:
-	#		country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
+	for x in country:
+		country_stats = stats[stats['location']==x].reset_index()
+
+		for i in range(1, len(country_stats)):
+			if country_stats['total_vaccinations'].isnull()[i]:
+				country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
 		
-	if length == 0:
-		end_date = country_stats['date'].max()
-		country_stats_timeframe = country_stats
-		latest_status = country_stats[country_stats['date'] == end_date]
-	else:    
-		end_date = country_stats['date'].max()
-		start_date = end_date - dt.timedelta(length)
-		start_index = country_stats.index[country_stats['date'] == start_date]
-		end_index = country_stats.index[country_stats['date'] == end_date]
-		country_stats_timeframe = country_stats.iloc[start_index[0]:]
-		latest_status = country_stats[country_stats['date'] == end_date]
+		if length == 0:
+			end_date = country_stats['date'].max()
+			country_stats_timeframe = country_stats
+			latest_status = country_stats[country_stats['date'] == end_date]
+		else:    
+			end_date = country_stats['date'].max()
+			start_date = end_date - dt.timedelta(length)
+			start_index = country_stats.index[country_stats['date'] == start_date]
+			end_index = country_stats.index[country_stats['date'] == end_date]
+			country_stats_timeframe = country_stats.iloc[start_index[0]:]
+			latest_status = country_stats[country_stats['date'] == end_date]
+
+		country_stats_merged = pd.concat([country_stats_merged, country_stats_timeframe], axis=1)
 
 	st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
