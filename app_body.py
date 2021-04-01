@@ -73,7 +73,7 @@ def chatbot():
 
 		length = st.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
 	
-		length_tag = {'All Time':'All','1 Week':7,'2 Weeks:14,'1 Month':30,'2 Months':60}
+		length_tag = {'All Time':'All','1 Week':7,'2 Weeks':14,'1 Month':30,'2 Months':60}
 
 		covid_stats(country, status, length_tag[length])
 
