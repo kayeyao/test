@@ -44,7 +44,7 @@ def covid_stats(country,status,length):
 		country_stats_graph = pd.DataFrame(columns = ['date'])
 		if status == 'Daily New Cases':
 			data = country_stats_merged[country_stats_merged['location']==x][['new_cases','date']].rename(columns={"new_cases": x})
-			country_stats_graph =  country_stats_graph.merge(data, on = 'date')
+			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 		elif status == 'Total Cases':
 			data = country_stats_merged[['total_cases','date']]
 		elif status == 'Daily New Deaths':
