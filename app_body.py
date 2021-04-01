@@ -41,7 +41,7 @@ def covid_stats(country,status,length):
                  	'Data as of' + end_date.strftime("%b %d %Y"): [int(latest_status['total_cases'].iloc[0]),int(latest_status['new_cases'].iloc[0]),int(latest_status['total_deaths'].iloc[0]), int(latest_status['new_deaths'].iloc[0]),int(latest_status['total_vaccinations'].iloc[0])]
 		}
     	
-	st.table(covidstats.set_index('column',inplace=True))
+	st.table(covidstats).set_index('column',inplace=True)
 
 
 	if status == 'Daily New Cases':
