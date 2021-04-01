@@ -22,7 +22,7 @@ def covid_stats(country,status,length):
 			country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
 		
 
-	if length == 'all':
+	if length == 0:
 		end_date = country_stats['date'].max()
 		country_stats_timeframe = country_stats
 		latest_status = country_stats[country_stats['date'] == end_date]
@@ -63,6 +63,6 @@ def covid_statistics():
 
 	length = st.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
 	
-	length_tag = {'All Time':'All','1 Week':7,'2 Weeks':14,'1 Month':30,'2 Months':60}
+	length_tag = {'All Time':0,'1 Week':7,'2 Weeks':14,'1 Month':30,'2 Months':60}
 
 	covid_stats(country, status, length_tag[length])
