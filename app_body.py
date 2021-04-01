@@ -71,11 +71,11 @@ def chatbot():
 	
 		status = st.selectbox('Information',('Daily New Cases','Total Cases','Daily New Deaths','Total Deaths','Total Vaccinations'))
 
-		length = st.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
+		length1 = st.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
 	
 		length_tag = {'All Time':'All','1 Week':7,'2 Weeks':14,'1 Month':30,'2 Months':60}
 
-		covid_stats(country, status, length_tag[length])
+		covid_stats(country, status, length_tag[length1])
 
 	if st.button('Information on COVID-19 Vaccines'):
     		result = add(1, 2)
