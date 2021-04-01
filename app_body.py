@@ -15,47 +15,47 @@ stats['date'] = pd.to_datetime(stats['date'])
 
 
 def covid_stats(country,status,length):
-    country_stats = stats[stats['location'] == country].reset_index()
+	country_stats = stats[stats['location'] == country].reset_index()
 
-    for i in range(1, len(country_stats)):
-        if country_stats['total_vaccinations'].isnull()[i]:
-            country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
+	for i in range(1, len(country_stats)):
+		if country_stats['total_vaccinations'].isnull()[i]:
+		country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
     
-    if length == 'all':
-        end_date = country_stats['date'].max()
-        country_stats_timeframe = country_stats
-        latest_status = country_stats[country_stats['date'] == end_date]
-    else:    
-        end_date = country_stats['date'].max()
-        start_date = end_date - dt.timedelta(length)
-        start_index = country_stats.index[country_stats['date'] == start_date]
-        end_index = country_stats.index[country_stats['date'] == end_date]
-        country_stats_timeframe = country_stats.iloc[start_index[0]:]
-        latest_status = country_stats[country_stats['date'] == end_date]
+	if length == 'all':
+		end_date = country_stats['date'].max()
+		country_stats_timeframe = country_stats
+		latest_status = country_stats[country_stats['date'] == end_date]
+	else:    
+		end_date = country_stats['date'].max()
+		start_date = end_date - dt.timedelta(length)
+		start_index = country_stats.index[country_stats['date'] == start_date]
+		end_index = country_stats.index[country_stats['date'] == end_date]
+		country_stats_timeframe = country_stats.iloc[start_index[0]:]
+		latest_status = country_stats[country_stats['date'] == end_date]
     
-    print('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
-    print('\nTotal Cases: ' + str(int(latest_status['total_cases'].iloc[0])))
-    print('New Cases: ' + str(int(latest_status['new_cases'].iloc[0])))
-    print('Total Deaths: ' + str(int(latest_status['total_deaths'].iloc[0])))
-    print('New Deaths: ' + str(int(latest_status['new_deaths'].iloc[0])))
-    print('Total Vaccinations: ' + str(int(latest_status['total_vaccinations'].iloc[0])))
+	print('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
+	print('\nTotal Cases: ' + str(int(latest_status['total_cases'].iloc[0])))
+	print('New Cases: ' + str(int(latest_status['new_cases'].iloc[0])))
+	print('Total Deaths: ' + str(int(latest_status['total_deaths'].iloc[0])))
+	print('New Deaths: ' + str(int(latest_status['new_deaths'].iloc[0])))
+	print('Total Vaccinations: ' + str(int(latest_status['total_vaccinations'].iloc[0])))
     
-    plt.figure(figsize=(12,8))
-    plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
+	plt.figure(figsize=(12,8))
+	plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
 
-    if status == 'Daily New Cases':
-        sns.lineplot(x='date', y='new_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
-    elif status == 'Total Cases':
-        sns.lineplot(x='date', y='total_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
-    elif status == 'Daily New Deaths':
-        sns.lineplot(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
-    elif status == 'Total Deaths':
-        sns.lineplot(x='date', y='total_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
-    elif status == 'Total Vaccinations':
-        sns.lineplot(x='date', y='total_vaccinations',data=country_stats,linewidth=2.5, color = 'green')   
+	if status == 'Daily New Cases':
+		sns.lineplot(x='date', y='new_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+	elif status == 'Total Cases':
+		sns.lineplot(x='date', y='total_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+	elif status == 'Daily New Deaths':
+		sns.lineplot(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+	elif status == 'Total Deaths':
+		sns.lineplot(x='date', y='total_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+	elif status == 'Total Vaccinations':
+		sns.lineplot(x='date', y='total_vaccinations',data=country_stats,linewidth=2.5, color = 'green')   
         
-    plt.xlabel("Date", fontsize = 15)
-    plt.ylabel(f'{status}', fontsize = 15)
+	plt.xlabel("Date", fontsize = 15)
+	plt.ylabel(f'{status}', fontsize = 15)
 
 
 
