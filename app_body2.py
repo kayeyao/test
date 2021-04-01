@@ -40,8 +40,11 @@ def covid_stats(country,status,length):
 
 	#st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
-	if status == 'Daily New Cases':
-		data = country_stats_merged[['new_cases','date']]
+	for x in country:
+		country_stats_graph = pd.DataFrame(columns = ['date'])
+		if status == 'Daily New Cases':
+			data = country_stats_merged[country_stats_merged['location']==x][['new_cases','date']].rename(columns={"new_cases": x})
+			country_stats_graph =  country_stats_graph.merge(data, on = 'date')
 	elif status == 'Total Cases':
 		data = country_stats_merged[['total_cases','date']]
 	elif status == 'Daily New Deaths':
