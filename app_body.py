@@ -36,12 +36,12 @@ def covid_stats(country,status,length):
     
 	st.write('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
 
-	covidstats = {
+	covidstats = pd.DataFrame({
 			'Column': ['Total Cases', 'New Cases', 'Total Deaths', 'New Deaths', 'Total Vaccinations'], 
-                 	'Data as of ' + end_date.strftime("%b %d %Y"): [f"{int(latest_status['total_cases'].iloc[0]):,d}",int(latest_status['new_cases'].iloc[0]),int(latest_status['total_deaths'].iloc[0]), int(latest_status['new_deaths'].iloc[0]),int(latest_status['total_vaccinations'].iloc[0])]
-		}
+                 	'Data as of ' + end_date.strftime("%b %d %Y"): [f"{int(latest_status['total_cases'].iloc[0]):,d}",f"{int(latest_status['new_cases'].iloc[0]):,d}",f"{int(latest_status['total_deaths'].iloc[0]):,d}", f"{int(latest_status['new_deaths'].iloc[0]):,d}",f"{int(latest_status['total_vaccinations'].iloc[0]):,d}"]
+		})
     	
-	st.table(covidstats)
+	st.table(covidstats.set_index('column', inplace=True))
 
 
 	if status == 'Daily New Cases':
