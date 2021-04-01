@@ -11,7 +11,7 @@ from PIL import Image
 from streamlit import caching
 from streamlit_folium import folium_static
 
-import app_body as body
+import app_body2 as body
 
 warnings.filterwarnings('ignore')
 
@@ -30,4 +30,5 @@ add_selectbox = st.sidebar.radio(
 
 
 if add_selectbox == 'COVID-19 Statistics':
-    body.covid_statistics()
+    	body.covid_statistics_table()
+	body.covid_statistics()
