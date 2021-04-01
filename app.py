@@ -24,8 +24,7 @@ st.sidebar.markdown("<h1 style='text-align: center;margin-bottom:50px'>DS Cohort
 
 ## Create Select Box and options
 add_selectbox = st.sidebar.radio(
-    "",
-    ("Chatbot")
+	"Chatbot"
 )
 
 
