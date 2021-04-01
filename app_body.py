@@ -34,7 +34,7 @@ def covid_stats(country,status,length):
 		country_stats_timeframe = country_stats.iloc[start_index[0]:]
 		latest_status = country_stats[country_stats['date'] == end_date]
     
-	st.write('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
+	st.subheader('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
 
 	covidstats = pd.DataFrame({
 			'Column': ['Total Cases', 'New Cases', 'Total Deaths', 'New Deaths', 'Total Vaccinations'], 
@@ -43,6 +43,7 @@ def covid_stats(country,status,length):
 
 	st.table(covidstats)
 
+	st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
 	if status == 'Daily New Cases':
 		data = country_stats_timeframe[['new_cases','date']]
