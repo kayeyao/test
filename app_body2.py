@@ -41,15 +41,15 @@ def covid_stats(country,status,length):
 	#st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
 	if status == 'Daily New Cases':
-		data = country_stats_timeframe[['new_cases','date']]
+		data = country_stats_merged[['new_cases','date']]
 	elif status == 'Total Cases':
-		data = country_stats_timeframe[['total_cases','date']]
+		data = country_stats_merged[['total_cases','date']]
 	elif status == 'Daily New Deaths':
-		data = country_stats_timeframe[['new_deaths','date']]
+		data = country_stats_merged[['new_deaths','date']]
 	elif status == 'Total Deaths':
-		data = country_stats_timeframe[['total_deaths','date']]
+		data = country_stats_merged[['total_deaths','date']]
 	elif status == 'Total Vaccinations':
-		data = country_stats_timeframe[['total_vaccinations','date']]  
+		data = country_stats_merged[['total_vaccinations','date']]  
 
 	st.line_chart(data.rename(columns={'date':'index'}).set_index('index'))
 
