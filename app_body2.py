@@ -36,7 +36,7 @@ def covid_stats(country,status,length):
 			country_stats_timeframe = country_stats.iloc[start_index[0]:]
 			latest_status = country_stats[country_stats['date'] == end_date]
 
-		country_stats_merged = pd.concat([country_stats_merged, country_stats_timeframe], axis=1)
+		country_stats_merged = country_stats_merged.append(country_stats_timeframe)
 
 	st.subheader('COVID-19 Cases in the ' + country + ' - ' + status)
 
