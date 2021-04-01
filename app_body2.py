@@ -15,7 +15,7 @@ stats['date'] = pd.to_datetime(stats['date'])
 
 
 def covid_stats(country,status,length):
-	country_stats_merged = pd.DataFrame()		
+	country_stats_merged = pd.DataFrame(columns = stats.columns)		
 
 	for x in country:
 		country_stats = stats[stats['location']==x].reset_index()
