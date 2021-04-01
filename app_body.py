@@ -19,7 +19,7 @@ def covid_stats(country,status,length):
 
 	for i in range(1, len(country_stats)):
 		if country_stats['total_vaccinations'].isnull()[i]:
-		country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
+			country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
     
 	if length == 'all':
 		end_date = country_stats['date'].max()
