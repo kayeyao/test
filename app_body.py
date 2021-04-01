@@ -33,14 +33,12 @@ def covid_stats(country,status,length):
         country_stats_timeframe = country_stats.iloc[start_index[0]:]
         latest_status = country_stats[country_stats['date'] == end_date]
     
-    
     print('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
     print('\nTotal Cases: ' + str(int(latest_status['total_cases'].iloc[0])))
     print('New Cases: ' + str(int(latest_status['new_cases'].iloc[0])))
     print('Total Deaths: ' + str(int(latest_status['total_deaths'].iloc[0])))
     print('New Deaths: ' + str(int(latest_status['new_deaths'].iloc[0])))
     print('Total Vaccinations: ' + str(int(latest_status['total_vaccinations'].iloc[0])))
-    
     
     plt.figure(figsize=(12,8))
     plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
