@@ -47,9 +47,9 @@ def covid_stats(country,status,length):
 	plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
 
 	if status == 'Daily New Cases':
-		st.line_chart(x='date', y='new_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+		st.line_chart(data=country_stats_timeframe['new_cases'])
 	elif status == 'Total Cases':
-		st.line_chart(x='date', y='total_cases',data=country_stats_timeframe,linewidth=2.5, color = 'blue')
+		st.line_chart(x='date', y='total_cases',data=country_stats_timeframe['total_cases'],linewidth=2.5, color = 'blue')
 	elif status == 'Daily New Deaths':
 		st.line_chart(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
 	elif status == 'Total Deaths':
