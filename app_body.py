@@ -20,9 +20,7 @@ def covid_stats(country,status,length):
 	for i in range(1, len(country_stats)):
 		if country_stats['total_vaccinations'].isnull()[i]:
 			country_stats['total_vaccinations'][i] = country_stats['total_vaccinations'][i-1]
-	
-	if length == 'all':	    
-		length = 0		
+		
 
 	if length == 'all':
 		end_date = country_stats['date'].max()
@@ -42,24 +40,19 @@ def covid_stats(country,status,length):
 	st.write('Total Deaths: ' + str(int(latest_status['total_deaths'].iloc[0])))
 	st.write('New Deaths: ' + str(int(latest_status['new_deaths'].iloc[0])))
 	st.write('Total Vaccinations: ' + str(int(latest_status['total_vaccinations'].iloc[0])))
-    
-	plt.figure(figsize=(12,8))
-	plt.title(f'COVID-19 Cases in the {country} - {status}', fontsize = 20)
 
 	if status == 'Daily New Cases':
 		data = country_stats_timeframe[['new_cases','date']]
-		st.line_chart(data.rename(columns={'date':'index'}).set_index('index'))
 	elif status == 'Total Cases':
-		st.line_chart(x='date', y='total_cases',data=country_stats_timeframe['total_cases'],linewidth=2.5, color = 'blue')
+		data = country_stats_timeframe[['total_cases','date']]
 	elif status == 'Daily New Deaths':
-		st.line_chart(x='date', y='new_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+		data = country_stats_timeframe[['new_deaths','date']]
 	elif status == 'Total Deaths':
-		st.line_chart(x='date', y='total_deaths',data=country_stats_timeframe,linewidth=2.5, color = 'orange')
+		data = country_stats_timeframe[['total_deaths','date']]
 	elif status == 'Total Vaccinations':
-		st.line_chart(x='date', y='total_vaccinations',data=country_stats,linewidth=2.5, color = 'green')   
-        
-	plt.xlabel("Date", fontsize = 15)
-	plt.ylabel(f'{status}', fontsize = 15)
+		data = country_stats_timeframe[['total_vaccinations','date']]  
+
+	st.line_chart(data.rename(columns={'date':'index'}).set_index('index'))
 
 
 
