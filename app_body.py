@@ -15,7 +15,7 @@ stats['date'] = pd.to_datetime(stats['date'])
 
 
 def covid_stats(country,status,length):
-	country_stats = stats[stats['location'] == country].reset_index()
+	country_stats = stats['location'].isin(country).reset_index()
 
 	for i in range(1, len(country_stats)):
 		if country_stats['total_vaccinations'].isnull()[i]:
