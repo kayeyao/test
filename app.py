@@ -25,7 +25,7 @@ st.sidebar.markdown("<h1 style='text-align: center;margin-bottom:50px'>DS Cohort
 ## Create Select Box and options
 add_selectbox = st.sidebar.radio(
 	"Chatbot",
-	("Information on COVID-19","COVID-19 Statistics","Information on COVID-19 Vaccines","Chatbot")
+	("Information on COVID-19","Information on COVID-19 Vaccines","COVID-19 Statistics","Chatbot")
 )
 
 
@@ -41,7 +41,12 @@ if add_selectbox == 'Information on COVID-19':
 	col3.image(image3, caption='', width = 200)
 	image4 = Image.open('A-alamin-ang-totoong-importmasyon.png')
 	col4.image(image4, caption='', width = 200)
+	
 	body.covid_info()
+
+
+if add_selectbox == 'Information on COVID-19 Vaccines':
+	body.vaccine_info()
 
 
 if add_selectbox == 'COVID-19 Statistics':
