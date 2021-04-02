@@ -33,7 +33,7 @@ def covid_statistics_table():
 	country_stats_timeframe = country_stats
 	latest_status = country_stats[country_stats['date'] == end_date]
 
-	if country.isin('World','Philippines','United States'):
+	if country in ['World','Philippines','United States']:
 		st.subheader('Status of COVID-19 cases in the ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
 	else:
 		st.subheader('Status of COVID-19 cases in ' + country + ' as of ' + end_date.strftime("%b %d %Y") + ':')
