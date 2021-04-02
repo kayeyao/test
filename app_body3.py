@@ -369,7 +369,7 @@ def chatbot():
 	while True:
     		question = get_text()
     
-   	if question.lower() != 'end':
+	if question.lower() != 'end':
         	response = chatbot.get_response(preprocessor(question))
         	print('\nResponse: ' + str(response))
         	print('Confidence: ' + str(response.confidence))
