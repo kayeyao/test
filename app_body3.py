@@ -319,7 +319,7 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-vaccinefaq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
 
 faq = []
 for i in range(0, len(vaccine_faq)):
