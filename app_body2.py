@@ -98,7 +98,7 @@ def vaccine_info():
 
 	if st.button('Why do we need to get vaccinated for COVID-19?'):	
 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed.')
-		st.write('With the availability of COVID-19 vaccines which can 1. prevent symptomatic infection and possibly 2. prevent severe infection and 3. prevent transmission, we have the opportunity to get ahead of the virus.')
+		st.write('With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus.')
 		st.write('However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated.')
 		st.write('For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community.')
 		st.write('So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
@@ -147,7 +147,7 @@ def vaccine_info():
 
 	if st.button('Is vaccination mandatory?'):	
 		st.write('Vaccination is not mandatory. But the government highly encourages the public to get vaccinated and be protected against preventable disease.')
- 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can 1. prevent symptomatic infection and possibly 2. prevent severe infection and 3. prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
+		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	if st.button('If I have already had COVID-19 and recovered, do I still need to get vaccinated with a COVID-19 vaccine?')
