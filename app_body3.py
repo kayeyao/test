@@ -381,7 +381,7 @@ def chatbot():
             		trainer.train([preprocessor(question), correct_response])
             		print('Response added to bot!')
     
-    	else:
+	else:
        		break
 
 
