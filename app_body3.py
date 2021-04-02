@@ -26,11 +26,6 @@ def covid_info():
 		st.write('COVID-19 is the disease caused by a new coronavirus called SARS-CoV-2.  WHO first learned of this new virus on 31 December 2019, following a report of a cluster of cases of ‘viral pneumonia’ in Wuhan, People’s Republic of China.')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
-	if st.button('Why is the disease being called coronavirus disease, COVID-19?'):	
-		st.write('On February 11, 2020 the World Health Organization announced an official name for the disease that is causing the 2019 novel coronavirus outbreak, first identified in Wuhan China. The new name of this disease is coronavirus disease 2019, abbreviated as COVID-19. In COVID-19, “CO” stands for corona, “VI” for virus, and ”D” for disease. Formerly, this disease was referred to as “2019 novel coronavirus” or “2019-nCoV.')
-		st.write('Source: Centers for Disease Control and Prevention - https://www.cdc.gov/coronavirus/2019-ncov/faq.html#Basics')
-
-
 	st.subheader('COVID-19 Symptoms')	
 	if st.button('What are the symptoms of COVID-19?'):	
 		st.write('The most common symptoms of COVID-19 are *Fever, Dry cough, and Fatigue*.\n') 
@@ -45,12 +40,6 @@ def covid_info():
 		st.write('The time from exposure to COVID-19 to the moment when symptoms begin is, on average, 5-6 days and can range from 1-14 days. This is why people who have been exposed to the virus are advised to remain at home and stay away from others, for 14 days, in order to prevent the spread of the virus, especially where testing is not easily available.')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
-	if st.button('What happens to people who get COVID-19?'):	
-		st.write('Among those who develop symptoms, most (about 80%) recover from the disease without needing hospital treatment. About 15% become seriously ill and require oxygen and 5% become critically ill and need intensive care.\n')
-		st.write('Complications leading to death may include respiratory failure, acute respiratory distress syndrome (ARDS), sepsis and septic shock, thromboembolism, and/or multiorgan failure, including injury of the heart, liver or kidneys.\n')
-		st.write('In rare situations, children can develop a severe inflammatory syndrome a few weeks after infection.')
-		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
-
 	if st.button('Who is most at risk of severe illness from COVID-19?'):	
 		st.write('People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. .\n')
 		st.write('However, anyone can get sick with COVID-19 and become seriously ill or die at any age. \n')
@@ -59,8 +48,7 @@ def covid_info():
 	st.subheader('COVID-19 Transmission & Prevention')
 	if st.button('How does COVID-19 spread?'):	
 		st.write('COVID-19 is transmitted from person to person via droplets, contact, and fomites. It is transmitted when one individual talks, sneezes, or coughs producing ‘droplets’ of saliva containing the COVID-19 virus. These droplets are then inhaled by another person. COVID-19 transmission usually occurs among close contacts -- including family members and healthcare workers. It is therefore important to maintain a distance of more than 1 meter away from any person who has respiratory symptoms.')
-		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
-
+		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs'
 
 	if st.button('Can COVID-19 be caught from a person who has no symptoms?'):	
 		st.write('The risk of getting COVID-19 from a person without any signs and symptoms is very low. Remember, COVID-19 is only spread through respiratory droplets coughed by an infected person. Therefore, if an infected person does not cough, he/she most likely will not infect others. However, many infected persons only experience mild symptoms. This is particularly true at the early stages of the disease. It is therefore possible to get COVID-19 from an infected person with mild cough but is not feeling ill.')
@@ -113,19 +101,20 @@ def vaccine_info():
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	st.subheader('Know your COVID-19 vaccine brands!')
-	if st.button('Pfizer-BioNTech'):
+	vaccine = st.selectbox('Select Vaccine Brand', ('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
+	if vaccine == 'Pfizer-BioNTech':
 		image = Image.open('pfizer.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')		
-	if st.button('Oxford-AstraZeneca'):
+	if vaccine == 'Oxford-AstraZeneca':
 		image = Image.open('astrazeneca.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
-	if st.button('CoronaVac (Sinovac)'):
+	if vaccine == 'CoronaVac (Sinovac)':
 		image = Image.open('sinovac.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
-	if st.button('Sputnik V'):
+	if vaccine == 'Sputnik V':
 		image = Image.open('sputnik.png')
 		st.image(image, caption='', width = 600)	
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
