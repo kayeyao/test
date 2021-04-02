@@ -24,7 +24,8 @@ def covid_info():
 	if st.button('What is COVID-19?'):	
 		st.write('COVID-19 is the disease caused by a new coronavirus called SARS-CoV-2.  WHO first learned of this new virus on 31 December 2019, following a report of a cluster of cases of ‘viral pneumonia’ in Wuhan, People’s Republic of China.')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
-	
+
+	st.subheader('COVID-19 Symptoms')	
 	if st.button('What are the symptoms of COVID-19?'):	
 		st.write('The most common symptoms of COVID-19 are *Fever, Dry cough, and Fatigue*.\n') 
 		st.write('Other symptoms that are less common and may affect some patients include *Loss of taste or smell, Nasal congestion, Conjunctivitis (also known as red eyes), Sore throat, Headache, Muscle or joint pain, Different types of skin rash, Nausea or vomiting, Diarrhea, Chills or dizziness*.\n') 
@@ -49,7 +50,7 @@ def covid_info():
 		st.write('However, anyone can get sick with COVID-19 and become seriously ill or die at any age. \n')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
-
+	st.subheader('COVID-19 Transmission')
 	if st.button('How does COVID-19 spread?'):	
 		st.write('COVID-19 is transmitted from person to person via droplets, contact, and fomites. It is transmitted when one individual talks, sneezes, or coughs producing ‘droplets’ of saliva containing the COVID-19 virus. These droplets are then inhaled by another person. COVID-19 transmission usually occurs among close contacts -- including family members and healthcare workers. It is therefore important to maintain a distance of more than 1 meter away from any person who has respiratory symptoms.')
 		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
@@ -64,6 +65,7 @@ def covid_info():
 		st.write('Stay safe by taking some simple precautions, such as physical distancing, wearing a mask, especially when distancing cannot be maintained, keeping rooms well ventilated, avoiding crowds and close contact, regularly cleaning your hands, and coughing into a bent elbow or tissue. Check local advice where you live and work. Do it all!')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
+	st.subheader('COVID-19 Testing')
 	if st.button('When should I get a test for COVID-19?'):	
 		st.write('Anyone with symptoms should be tested, wherever possible. People who do not have symptoms but have had close contact with someone who is, or may be, infected may also consider testing – contact your local health guidelines and follow their guidance.')
 		st.write('While a person is waiting for test results, they should remain isolated from others. Where testing capacity is limited, tests should first be done for those at higher risk of infection, such as health workers, and those at higher risk of severe illness such as older people, especially those living in seniors’ residences or long-term care facilities.') 
@@ -74,6 +76,7 @@ def covid_info():
 		st.write('Rapid antigen tests (sometimes known as a rapid diagnostic test – RDT) detect viral proteins (known as antigens). Samples are collected from the nose and/or throat with a swab. These tests are cheaper than PCR and will offer results more quickly, although they are generally less accurate. These tests perform best when there is more virus circulating in the community and when sampled from an individual during the time they are most infectious.') 
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
+	st.subheader('DOH COVID-19 Response')
 	if st.button('What are the DOH and other concerned agencies doing to contain the situation?'):	
 		st.write('DOH is closely monitoring individuals who manifested signs of respiratory infection and had a history of travel to China or other countries with confirmed COVID-19 cases, and is coordinating with WHO and China Center for Disease Control for updates.  The Department is also strictly monitoring our repatriates from Wuhan, China and the M/V Diamond Princess in Japan, and continues to conduct contact tracing of our positive cases to ascertain that the spread of the virus locally is put to a halt.\n')
 		st.write('Moreover, DOH has instituted the Interagency Task Force for the Management of Emerging Infectious Diseases (IATF-EID), the agency in-charge for the overall management of COVID-19 preparedness and response. It has likewise created the DOH Emergency Operation Center (DOH EOC) for COVID-19, a command center in-charge of consolidating updates and information as the COVID-19 health event evolves.\n')
@@ -182,11 +185,6 @@ def vaccine_info():
 		st.write('Since we need to ensure that our health system will be able to continuously care for all of us, medical frontliners will be the first to receive the vaccines.')
 		st.write('This is to be followed by eligible senior citizens who are at greatest risk of severe infection or deaths. We know from our local data that COVID-19 is more dangerous for the elderly.')
 		st.write('The sequence of who will be prioritized have been determined with the help of our experts.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
-
-	if st.button('When and where will I get vaccinated?'):	
-		st.write('The national government is working in partnership with our local governments to get the vaccines to you. Your local government unit will arrange for the registration and scheduling of vaccination.')
-		st.write('Please wait for specific instructions and announcements from your mayor or governor.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
 	if st.button('If I am not part of the priority group, how will I get access to the vaccine?'):	
