@@ -10,6 +10,17 @@ from streamlit_folium import folium_static
 from streamlit import caching
 import datetime as dt
 import altair as alt
+import chatterbot
+from chatterbot import ChatBot
+from chatterbot.conversation import Statement
+from chatterbot.trainers import ListTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import QuestionAnswerTrainer
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize 
+from nltk.stem import WordNetLemmatizer
+
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
 stats['date'] = pd.to_datetime(stats['date'])
@@ -155,7 +166,6 @@ def vaccine_info():
 	st.subheader('COVID-19 Vaccine Deployment')
 	if st.button('Is vaccination mandatory?'):	
 		st.write('Vaccination is not mandatory. But the government highly encourages the public to get vaccinated and be protected against preventable disease.')
-		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	if st.button('How much will I have to pay for the COVID-19 vaccine?'):	
@@ -259,3 +269,151 @@ def covid_statistics():
 	length_tag = {'All Time':0,'1 Week':7,'2 Weeks':14,'1 Month':30,'2 Months':60}
 
 	covid_stats(country, status, length_tag[length])
+
+def remove_punctuation(sentence):
+    punc = "!()-[]{};:'\,<>./?@#$%^&*_~"
+    
+    for word in sentence: 
+        if word in punc: 
+            sentence = sentence.replace(word, "")
+            
+    return sentence
+
+def lemmatize(sentence):
+    lemmatizer = WordNetLemmatizer()
+    word_tokens = word_tokenize(sentence) 
+    
+    lemmatized_sentence = ''
+    
+    for word in word_tokens:
+        lemma = lemmatizer.lemmatize(word)
+        lemmatized_sentence = lemmatized_sentence + str(lemma) + ' '
+        
+    return lemmatized_sentence.rstrip()
+
+def remove_stopwords(sentence):
+    stop_words = set(stopwords.words('english')) 
+    word_tokens = word_tokenize(sentence) 
+
+    filtered_sentence = [w for w in word_tokens if not w in stop_words] 
+    filtered_sentence = ''
+
+    for w in word_tokens: 
+        if w not in stop_words: 
+            filtered_sentence = filtered_sentence +  str(w) + ' '
+    
+    return filtered_sentence.rstrip()
+
+def replace_tags(sentence):
+    covid_tags = {'covid19':'covid','covid-19':'covid','covid 19':'covid','corona':'covid','coronavirus':'covid','virus':'covid'}
+    vaccine_tags = {'covid vaccine':'vaccine'}
+    
+    for i, j in covid_tags.items():
+        sentence = sentence.replace(i, j)
+    
+    for i, j in vaccine_tags.items():
+        sentence = sentence.replace(i, j)
+    
+    return sentence
+
+def preprocessor(sentence):
+    return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
+
+chatbot = ChatBot('CoronaBot',
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    response_selection_method=chatterbot.response_selection.get_most_frequent_response,
+    logic_adapters=[      
+        {'import_path': 'chatterbot.logic.BestMatch',
+         'default_response': 'I am sorry, but I do not understand. I am still learning.',
+         'statement_comparison_function': chatterbot.comparisons.jaccard_similarity,
+         'maximum_similarity_threshold': 0.95},
+        {'import_path': 'chatterbot.logic.BestMatch',
+         'default_response': 'I am sorry, but I do not understand. I am still learning.',
+         'statement_comparison_function': chatterbot.comparisons.levenshtein_distance,
+         'maximum_similarity_threshold': 0.95},
+        {'import_path': 'chatterbot.logic.BestMatch',
+         'default_response': 'I am sorry, but I do not understand. I am still learning.',
+         'statement_comparison_function': chatterbot.comparisons.synset_distance,
+         'maximum_similarity_threshold': 0.95}
+    ],
+    database_uri='sqlite:///database.sqlite3',
+    trainer='chatterbot.trainers.QuestionAnswerTrainer'
+)
+
+training_data = faqclean
+trainer = ListTrainer(chatbot)
+
+def get_feedback():
+
+    text = input()
+
+    if 'yes' in text.lower():
+        return True
+    elif 'no' in text.lower():
+        return False
+    else:
+        print('Please type either "Yes" or "No"')
+        return get_feedback()
+
+
+def get_text():
+    input_text = st.text_input("You: ","So, what's in your mind")
+    return input_text
+
+def chatbot():
+	if True:
+    		st.text_area("Bot:", value=bot.get_response(user_input), height=200, max_chars=None, key=None)
+	else:
+   		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
+
+	while True:
+    		question = get_text()
+    
+   	if question.lower() != 'end':
+        	response = chatbot.get_response(preprocessor(question))
+        	print('\nResponse: ' + str(response))
+        	print('Confidence: ' + str(response.confidence))
+        
+        	print('I am still learning. Does the response answer your question? Please type yes or no.')
+        
+        	if get_feedback() is False:
+            		correct_response = input('Please input correct response: ')
+            		trainer.train([preprocessor(question), correct_response])
+            		print('Response added to bot!')
+    
+    	else:
+       		break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
