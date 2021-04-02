@@ -20,7 +20,6 @@ countries = ('World', 'Afghanistan', 'Africa', 'Albania', 'Algeria', 'Andorra', 
 
 def covid_statistics_table():
 	st.header('COVID-19 Statistics')
-	st.write('Source: Our World in Data')
 
 	country = st.selectbox('Country', countries)
 	

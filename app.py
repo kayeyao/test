@@ -29,6 +29,13 @@ add_selectbox = st.sidebar.radio(
 )
 
 
+
+if add_selectbox == 'Information on COVID-19':
+	body.covid_info()
+
+
 if add_selectbox == 'COVID-19 Statistics':
 	body.covid_statistics_table()
+	st.write('Source: Our World in Data')
 	body.covid_statistics()
+	st.write('Source: Our World in Data')
