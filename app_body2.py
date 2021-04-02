@@ -56,6 +56,10 @@ def covid_info():
 		st.write('However, anyone can get sick with COVID-19 and become seriously ill or die at any age. \n')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
+	if st.button('Is COVID-19 fatal?'):	
+		st.write('COVID-19 could be fatal, but this happens rarely. According to WHO, 82% of infected patients will have mild presentations, 15% will have severe manifestations, and only 3% will be critical. As mentioned before, older people, people with compromised immune systems, and people with pre-existing medical conditions, such as diabetes and heart disease, are more prone to fall severely ill with the virus. Around 2% of people infected with the disease have died.')
+		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
+
 	st.subheader('COVID-19 Transmission')
 	if st.button('How does COVID-19 spread?'):	
 		st.write('COVID-19 is transmitted from person to person via droplets, contact, and fomites. It is transmitted when one individual talks, sneezes, or coughs producing ‘droplets’ of saliva containing the COVID-19 virus. These droplets are then inhaled by another person. COVID-19 transmission usually occurs among close contacts -- including family members and healthcare workers. It is therefore important to maintain a distance of more than 1 meter away from any person who has respiratory symptoms.')
@@ -66,13 +70,28 @@ def covid_info():
 		st.write('The risk of getting COVID-19 from a person without any signs and symptoms is very low. Remember, COVID-19 is only spread through respiratory droplets coughed by an infected person. Therefore, if an infected person does not cough, he/she most likely will not infect others. However, many infected persons only experience mild symptoms. This is particularly true at the early stages of the disease. It is therefore possible to get COVID-19 from an infected person with mild cough but is not feeling ill.')
 		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
 
+	if st.button('How long does the virus survive on surfaces?'):	
+		st.write('According to WHO, there is no confirmed timeline how long a COVID-19 virus survives in surfaces. However, most likely it behaves like other coronaviruses. Studies show that coronaviruses can survive on surfaces for a few hours up to several days depending on varied conditions (e.g. type of surface, temperature or humidity of the environment).')
+		st.write('If you suspect that a surface is infected, clean it with disinfectant; clean your hands with alcohol-based hand sanitizer or wash them with soap and water; and if possible, minimize touching your eyes, mouth or nose.')
+		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
+
+	st.subheader('COVID-19 Prevention')
+	if st.button('What can I do to prevent the spread of COVID-19?'):	
+		st.write('DOH advises the public to practice protective measures. It is still the best way to protect oneself against COVID-19. 
+		st.write('- Practice frequent and proper handwashing - wash hands often with soap and water for at least 20 seconds. Use an alcohol-based hand sanitizer if soap and water are not available.')
+		st.write('- Practice proper cough etiquette - Cover mouth and nose using tissue or sleeves/bend of the elbow when coughing or sneezing; Move away from people when coughing; Do not spit; Throw away used tissues properly; Always wash your hands after sneezing or coughing; Use alcohol/sanitizer.')
+		st.write('- Maintain distance of at least one meter away from individual/s experiencing respiratory symptoms.')
+		st.write('- Avoid unprotected contact with farm or wild animals (alive or dead), animal markets, and products that come from animals (such as uncooked meat).')
+		st.write('Ensure that food is well-cooked.')
+		st.write('Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
 
 	if st.button('How can we protect others and ourselves from COVID-19?'):	
 		st.write('Stay safe by taking some simple precautions, such as physical distancing, wearing a mask, especially when distancing cannot be maintained, keeping rooms well ventilated, avoiding crowds and close contact, regularly cleaning your hands, and coughing into a bent elbow or tissue. Check local advice where you live and work. Do it all!')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
+
 	st.subheader('COVID-19 Testing')
-	if st.button('When should I get a test for COVID-19?'):	
+	if st.button('When should I get tested for COVID-19?'):	
 		st.write('Anyone with symptoms should be tested, wherever possible. People who do not have symptoms but have had close contact with someone who is, or may be, infected may also consider testing – contact your local health guidelines and follow their guidance.')
 		st.write('While a person is waiting for test results, they should remain isolated from others. Where testing capacity is limited, tests should first be done for those at higher risk of infection, such as health workers, and those at higher risk of severe illness such as older people, especially those living in seniors’ residences or long-term care facilities.') 
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
