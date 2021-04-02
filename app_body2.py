@@ -27,7 +27,7 @@ def covid_info():
 	
 	if st.button('What are the symptoms of COVID-19?'):	
 		st.write('The most common symptoms of COVID-19 are *Fever, Dry cough, and Fatigue*.\n' 
-		st.write('Other symptoms that are less common and may affect some patients include *Loss of taste or smell, Nasal congestion, Conjunctivitis (also known as red eyes), Sore throat, Headache, Muscle or joint pain, Different types of skin rash, Nausea or vomiting, Diarrhea, Chills or dizziness*.\n') 
+		st.write('Other symptoms that are less common and may affect some patients include *Loss of taste or smell, Nasal congestion, Conjunctivitis, Sore throat, Headache, Muscle or joint pain, Different types of skin rash, Nausea or vomiting, Diarrhea, Chills or dizziness*.\n') 
 		st.write('Symptoms of severe COVID‐19 disease include *Shortness of breath, Loss of appetite, Confusion, Persistent pain or pressure in the chest, High temperature (above 38 °C)*.\n') 
 		st.write('Other less common symptoms are *Irritability, Confusion, Reduced consciousness (sometimes associated with seizures), Anxiety, Depression, Sleep disorders*.\n')
 		st.write('More severe and rare neurological complications such as *strokes, brain inflammation, delirium and nerve damage*.\n') 
