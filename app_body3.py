@@ -20,7 +20,6 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
 from nltk.stem import WordNetLemmatizer
-import mysql.connector
 
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
