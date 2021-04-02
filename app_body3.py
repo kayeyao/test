@@ -361,24 +361,23 @@ def get_text():
     return input_text
 
 def chatbot():
-	while True:
-    		question = get_text()
+	question = get_text()
 
-		if question.lower() != 'end':
-        		response = chatbot.get_response(preprocessor(question))
+	if question.lower() != 'end':
+       		response = chatbot.get_response(preprocessor(question))
         		
-			st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
-			print('\nResponse: ' + str(response))
-        		print('Confidence: ' + str(response.confidence))
+		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
+		print('\nResponse: ' + str(response))
+       		print('Confidence: ' + str(response.confidence))
         
-        		print('I am still learning. Does the response answer your question? Please type yes or no.')
-        
-        		if get_feedback() is False:
-            			correct_response = input('Please input correct response: ')
-            			trainer.train([preprocessor(question), correct_response])
-            			print('Response added to bot!')
-		else:
-			st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
+       		print('I am still learning. Does the response answer your question? Please type yes or no.')
+       
+       		if get_feedback() is False:
+       			correct_response = input('Please input correct response: ')
+       			trainer.train([preprocessor(question), correct_response])
+       			print('Response added to bot!')
+	else:
+		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
 
 
 
