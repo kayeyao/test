@@ -86,6 +86,7 @@ def covid_info():
 def vaccine_info():
 	st.header('Frequently Asked Questions on COVID-19 Vaccines')
 	
+	st.subheader('Available COVID-19 Vaccines')
 	if st.button('Is there a vaccine for COVID-19?'):	
 		st.write('Yes there are now several vaccines that are in use. The first mass vaccination programme started in early December 2020 and as of and as of 15 February 2021, 175.3 million vaccine doses have been administered. At least 7 different vaccines (3 platforms) have been administered.')
 		st.write('WHO issued an Emergency Use Listing (EULs) for the Pfizer COVID-19 vaccine (BNT162b2) on 31 December 2020. On 15 February 2021, WHO issued EULs for two versions of the AstraZeneca/Oxford COVID-19 vaccine, manufactured by the Serum Institute of India and SKBio. WHO is on track to EUL other vaccine products through June.')
@@ -94,8 +95,28 @@ def vaccine_info():
 
 	if st.button('When will the COVID-19 vaccine be available in the Philippines?'):	
 		st.write('The government is currently in the initial phase of vaccine rollout with the availability of Sinovac and AstraZeneca vaccines in the country. Likewise, the country is in the advanced stages of negotiations with the COVAX Facility and various other vaccine manufacturers.')
+		image = Image.open('vaccine tracker.png')
+		st.image(image, caption='', column_width = True)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
+	st.subheader('COVID-19 Vaccine Brands')
+	if st.button('Know your COVID-19 vaccine brands!'):
+		brand = st.selectbox('Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
+		if brand == 'Pfizer-BioNTech':
+			image = Image.open('pfizer.png')
+			st.image(image, caption='', column_width = True)		
+		if brand == 'Oxford-AstraZeneca':
+			image = Image.open('astrazeneca.png')
+			st.image(image, caption='', column_width = True)	
+		if brand == 'CoronaVac (Sinovac)':
+			image = Image.open('sinovac.png')
+			st.image(image, caption='', column_width = True)	
+		if brand == 'Sputnik V':
+			image = Image.open('sputnik.png')
+			st.image(image, caption='', column_width = True)	
+		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
+
+	st.subheader('Necessity of Vaccination')
 	if st.button('Why do we need to get vaccinated for COVID-19?'):	
 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed.')
 		st.write('With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus.')
@@ -115,6 +136,7 @@ def vaccine_info():
 		st.write("In addition, efficacy is measured not only by a vaccine's ability to prevent infection, but also in its prevention of severe forms of the disease and of forward transmission. While a vaccinated person may not be completely prevented from getting infected, s/he will still have a reduced risk of getting severe forms of COVID-19. If more people have this reduced risk, then we can more effectively reduce transmission.")
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
+	st.subheader('COVID-19 Vaccine Safety and Efficacy')
 	if st.button('How will we know if COVID-19 vaccines are safe?'):	
 		st.write('Ensuring the safety and quality of vaccines is one of WHO’s highest priorities. WHO works closely with national authorities to ensure that global norms and standards are developed and implemented to assess the quality, safety and efficacy of vaccines.')
 		st.write('The process to develop COVID vaccines is fast-tracked while maintaining the highest standards: Given the urgent need to stop the pandemic, pauses between steps, often needed to secure funding, have been shortened, or eliminated, and in some cases, steps are being carried out in parallel to accelerate the process, wherever that is safe to do. COVID-19 vaccine developers have issued a joint pledge not to seek government approval for their vaccines until they’ve been proven to be safe and effective.')
@@ -145,6 +167,7 @@ def vaccine_info():
 		st.write('COVID-19 vaccine use will be closely monitored by national authorities and international bodies, including WHO, to detect serious side effects, including any unexpected side effects. This will help us better understand and manage the specific risks of allergic reactions or other serious side effects to COVID-19 vaccines that may not have been detected during clinical trials, ensuring safe vaccination for all.')
 		st.write('Source: World Health /organization - who.int/news-room/q-a-detail/coronavirus-disease-(covid-19)-vaccines-safety')
 
+	st.subheader('COVID-19 Vaccine Deployment')
 	if st.button('Is vaccination mandatory?'):	
 		st.write('Vaccination is not mandatory. But the government highly encourages the public to get vaccinated and be protected against preventable disease.')
 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
@@ -182,6 +205,7 @@ def vaccine_info():
 		st.write('No, you cannot purchase COVID-19 vaccines from private clinics or pharmacies. At present, only the government is duly authorized to procure and administer vaccines. Until a full market authorization is issued by the Philippine FDA, any COVID-19 vaccine should not be sold to the public.')
 		st.write('Source: Department of Health - https://doh.gov.ph/faqs/vaccines')
 
+	st.subheader('COVID-19 Vaccine Dosage')
 	if st.button('Can a second dose of a different vaccine brand be administered?'):	
 		st.write('No. The same brand is required to be given for a 2nd dose, to ensure the maximum protection of the vaccinee. The DOH is coordinating with the Local Government Units to ensure allocation of adequate doses of the same Philippine FDA-approved vaccine brand.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
@@ -193,7 +217,7 @@ def vaccine_info():
 	if st.button('What should be done in case an individual refuses or misses the second dose of vaccine?'):	
 		st.write('The US Centers for Disease Control and Prevention (CDC) allow for a 4-day grace period when assessing on-time receipt. People should try to get the second dose during this period or as soon after as possible. However, if the second dose is given later than this, you do not need to restart the vaccine. You still only need to get the second dose. However, it is important to note that the first dose did not protect as many people as were protected after the second dose, so if you are exposed to SARS-CoV-2 during the delay, you may or may not have enough immunity to prevent you from experiencing symptoms.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
-
+	
 
 def covid_statistics_table():
 	st.header('COVID-19 Statistics')
