@@ -374,7 +374,7 @@ def get_text():
     return input_text
 
 def chatbot():
-	question = input()
+	question = get_text()
 
 	if question.lower() != 'end':
 		response = chatbot.get_response(preprocessor(question))
