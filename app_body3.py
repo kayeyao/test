@@ -370,7 +370,7 @@ def get_feedback():
 
 
 def get_text():
-    input_text = st.text_input("You: ","So, what's in your mind")
+    input_text = st.text_input("Input Question: ")
     return input_text
 
 def chatbot():
