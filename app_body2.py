@@ -99,8 +99,7 @@ def vaccine_info():
 		st.image(image, caption='', width = 800)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
-	st.subheader('COVID-19 Vaccine Brands')
-	if st.button('Know your COVID-19 vaccine brands!'):
+	st.subheader('Know your COVID-19 vaccine brands!'')
 	brand = st.selectbox('Select Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
 	if brand == 'Pfizer-BioNTech':
 		image = Image.open('pfizer.png')
