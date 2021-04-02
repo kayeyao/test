@@ -20,6 +20,7 @@ countries = ('World', 'Afghanistan', 'Africa', 'Albania', 'Algeria', 'Andorra', 
 
 def covid_statistics_table():
 	st.header('COVID-19 Statistics')
+	st.write('Source: Our World in Data')
 
 	country = st.selectbox('Country', countries)
 	
@@ -96,8 +97,7 @@ def covid_stats(country,status,length):
 
 
 def covid_statistics():
-	st.header('COVID-19 Cases + Vaccination')
-	st.write('Source: Our World in Data')
+	st.header('COVID-19 Cases + Vaccinations')
 	col1, col2 = st.beta_columns(2)	
 
 	country = st.multiselect('Country', countries)
