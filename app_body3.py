@@ -15,6 +15,7 @@ from chatterbot import ChatBot
 from chatterbot.conversation import Statement
 from chatterbot.trainers import ListTrainer
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot import *
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
