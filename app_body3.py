@@ -15,7 +15,6 @@ from chatterbot import ChatBot
 from chatterbot.conversation import Statement
 from chatterbot.trainers import ListTrainer
 from chatterbot.trainers import ChatterBotCorpusTrainer
-from chatterbot.trainers import QuestionAnswerTrainer
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
@@ -337,7 +336,7 @@ chatbot = ChatBot('CoronaBot',
          'maximum_similarity_threshold': 0.95}
     ],
     database_uri='sqlite:///database.sqlite3',
-    trainer='chatterbot.trainers.QuestionAnswerTrainer'
+    trainer='chatterbot.trainers.ListTrainer'
 )
 
 training_data = faqclean
