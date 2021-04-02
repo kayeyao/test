@@ -320,11 +320,17 @@ def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
 vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+
 
 faq = []
 for i in range(0, len(vaccine_faq)):
    faq.append(vaccine_faq['Question'][i])
    faq.append(vaccine_faq['Answer'][i])
+for i in range(0, len(covid_faq)):
+   faq.append(vaccine_faq['Question'][i])
+   faq.append(vaccine_faq['Answer'][i])
+
 
 faqclean=[]
 
@@ -348,7 +354,7 @@ chatbot = ChatBot('CoronaBot', read_only = True,
          'statement_comparison_function': 'chatterbot.comparisons.synset_distance',
          'maximum_similarity_threshold': 0.95}
     ],
-    database_uri='sqlite:///database.sqlite3',
+    #database_uri='sqlite:///database.sqlite3',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
@@ -370,7 +376,7 @@ def get_feedback():
 
 
 def get_text():
-    input_text = st.text_input("Input Question: ")
+    input_text = st.text_input("Input Question: ", "What is COVID-19?")
     return input_text
 
 def chatterbot():
