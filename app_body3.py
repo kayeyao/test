@@ -348,7 +348,7 @@ chatbot = ChatBot('CoronaBot',
          'statement_comparison_function': 'chatterbot.comparisons.synset_distance',
          'maximum_similarity_threshold': 0.95}
     ],
-    #database_uri='sqlite:///database.sqlite3',
+    database_uri='sqlite:///database.sqlite3',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
