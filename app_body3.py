@@ -380,7 +380,6 @@ def chatbot():
             		correct_response = input('Please input correct response: ')
             		trainer.train([preprocessor(question), correct_response])
             		print('Response added to bot!')
-    
 	else:
 		break
 
