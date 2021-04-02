@@ -364,13 +364,13 @@ def chatbot():
 	question = get_text()
 
 	if question.lower() != 'end':
-       		response = chatbot.get_response(preprocessor(question))
+		response = chatbot.get_response(preprocessor(question))
         		
 		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
 		print('\nResponse: ' + str(response))
-       		print('Confidence: ' + str(response.confidence))
+		print('Confidence: ' + str(response.confidence))
         
-       		print('I am still learning. Does the response answer your question? Please type yes or no.')
+		print('I am still learning. Does the response answer your question? Please type yes or no.')
        
        		if get_feedback() is False:
        			correct_response = input('Please input correct response: ')
