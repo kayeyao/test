@@ -320,19 +320,19 @@ def preprocessor(sentence):
 
 chatbot = ChatBot('CoronaBot',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
-    response_selection_method=chatterbot.response_selection.get_most_frequent_response,
+    response_selection_method='chatterbot.response_selection.get_most_frequent_response',
     logic_adapters=[      
         {'import_path': 'chatterbot.logic.BestMatch',
          'default_response': 'I am sorry, but I do not understand. I am still learning.',
-         'statement_comparison_function': chatterbot.comparisons.jaccard_similarity,
+         'statement_comparison_function': 'chatterbot.comparisons.jaccard_similarity',
          'maximum_similarity_threshold': 0.95},
         {'import_path': 'chatterbot.logic.BestMatch',
          'default_response': 'I am sorry, but I do not understand. I am still learning.',
-         'statement_comparison_function': chatterbot.comparisons.levenshtein_distance,
+         'statement_comparison_function': 'chatterbot.comparisons.levenshtein_distance',
          'maximum_similarity_threshold': 0.95},
         {'import_path': 'chatterbot.logic.BestMatch',
          'default_response': 'I am sorry, but I do not understand. I am still learning.',
-         'statement_comparison_function': chatterbot.comparisons.synset_distance,
+         'statement_comparison_function': 'chatterbot.comparisons.synset_distance',
          'maximum_similarity_threshold': 0.95}
     ],
     database_uri='sqlite:///database.sqlite3',
