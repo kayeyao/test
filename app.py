@@ -34,13 +34,13 @@ if add_selectbox == 'Information on COVID-19':
 	col1, col2, col3, col4 = st.beta_columns(4)	
 
 	image1 = Image.open('B-Bawal-walang-mask.png')
-	col1.image(image1, caption='', width = 200)
+	col1.image(image1, caption='', width = 350)
 	image2 = Image.open('I-isanitize-ang-mga-kamay.png')
-	col2.image(image2, caption='')
+	col2.image(image2, caption='', width = 350)
 	image3 = Image.open('D-dumistansya-ng-isang-metro.png')
-	col3.image(image3, caption='')
+	col3.image(image3, caption='', width = 350)
 	image4 = Image.open('A-alamin-ang-totoong-importmasyon.png')
-	col4.image(image4, caption='')
+	col4.image(image4, caption='', width = 350)
 	body.covid_info()
 
 
