@@ -380,8 +380,8 @@ def chatbot():
 		#response = chatbot.get_response(preprocessor(question))
         	
 		response = 'hello'	
-		#st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
-		print('\nResponse: ' + str(response))
+		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
+		#print('\nResponse: ' + str(response))
 		#print('Confidence: ' + str(response.confidence))
         
 		print('I am still learning. Does the response answer your question? Please type yes or no.')
