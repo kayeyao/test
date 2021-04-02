@@ -319,18 +319,18 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+#vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
 
-faq = []
-for i in range(0, len(vaccine_faq)):
-   faq.append(vaccine_faq['Question'][i])
-   faq.append(vaccine_faq['Answer'][i])
+#faq = []
+#for i in range(0, len(vaccine_faq)):
+#   faq.append(vaccine_faq['Question'][i])
+#   faq.append(vaccine_faq['Answer'][i])
 
-faqclean=[]
+#faqclean=[]
 
-for i in range(0,len(faq)//2):
-   faqclean.append(preprocessor(faq[2*i]).rstrip())
-   faqclean.append(faq[2*i+1])
+#for i in range(0,len(faq)//2):
+#   faqclean.append(preprocessor(faq[2*i]).rstrip())
+#   faqclean.append(faq[2*i+1])
 
 chatbot = ChatBot('CoronaBot',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
@@ -352,9 +352,9 @@ chatbot = ChatBot('CoronaBot',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-training_data = faqclean
-trainer = ListTrainer(chatbot)
-trainer.train(training_data)
+#training_data = faqclean
+#trainer = ListTrainer(chatbot)
+#trainer.train(training_data)
 
 def get_feedback():
 
