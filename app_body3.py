@@ -398,7 +398,7 @@ def chatterbot():
 	else:
 		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
 
-	st.write("For more information on COVID-19 Vaccination, visit the DOH's website - https://doh.gov.ph/vaccines")
+	st.write("For more information on COVID-19 Vaccination, visit the DOH's website: https://doh.gov.ph/vaccines")
 
 
 
