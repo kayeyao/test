@@ -101,7 +101,7 @@ def vaccine_info():
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	st.subheader('Know your COVID-19 vaccine brands!')
-	vaccine = st.selectbox('Select Vaccine Brand', ('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
+	vaccine = st.selectbox('Select Vaccine Brand', ('-','Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
 	if vaccine == 'Pfizer-BioNTech':
 		image = Image.open('pfizer.png')
 		st.image(image, caption='', width = 600)
@@ -158,30 +158,16 @@ def vaccine_info():
 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
-	if st.button('Who gets the vaccine first?'):	
-		st.write('Since we need to ensure that our health system will be able to continuously care for all of us, medical frontliners will be the first to receive the vaccines.')
-		st.write('This is to be followed by eligible senior citizens who are at greatest risk of severe infection or deaths. We know from our local data that COVID-19 is more dangerous for the elderly.')
-		st.write('The sequence of who will be prioritized have been determined with the help of our experts.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
-
-	if st.button('If I am not part of the priority group, how will I get access to the vaccine?'):	
-		st.write('The government is continuing negotiations to ensure adequate vaccine supply for all Filipinos, including those not in the priority groups.')
-		st.write('The objective is to provide equitable access to safe and effective COVID-19 vaccines to the priority eligible groups or almost 70 million Filipinos by 2021, 60-70% of Filipinos by 2022, and followed by the remaining Filipino population in the next three (3) years.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
-
 	if st.button('How much will I have to pay for the COVID-19 vaccine?'):	
 		st.write('Government will provide the vaccine for free. You do not need to pay for anything to be vaccinated.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
-	
-	st.subheader('COVID-19 Vaccine Dosage')
-	if st.button('Can a second dose of a different vaccine brand be administered?'):	
-		st.write('No. The same brand is required to be given for a 2nd dose, to ensure the maximum protection of the vaccinee. The DOH is coordinating with the Local Government Units to ensure allocation of adequate doses of the same Philippine FDA-approved vaccine brand.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
-	if st.button('What is the interval between the 1st and 2nd dose of COVID vaccine?'):	
-		st.write('Interval of doses varies per vaccine. For those currently available, Sinovac is taken 4 weeks (28 days) apart, while AstraZeneca is taken 4 to 12 weeks apart.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
-
+	if st.button('Who gets the vaccine first?'):	
+		st.write('Since we need to ensure that our health system will be able to continuously care for all of us, medical frontliners will be the first to receive the vaccines.')
+		st.write('This is to be followed by eligible senior citizens who are at greatest risk of severe infection or deaths. We know from our local data that COVID-19 is more dangerous for the elderly.')
+		st.write('The government is continuing negotiations to ensure adequate vaccine supply for all Filipinos, including those not in the priority groups.')
+		st.write('The objective is to provide equitable access to safe and effective COVID-19 vaccines to the priority eligible groups or almost 70 million Filipinos by 2021, 60-70% of Filipinos by 2022, and followed by the remaining Filipino population in the next three (3) years.')
+		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
 def covid_statistics_table():
 	st.header('COVID-19 Statistics')
