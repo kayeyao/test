@@ -96,24 +96,27 @@ def vaccine_info():
 	if st.button('When will the COVID-19 vaccine be available in the Philippines?'):	
 		st.write('The government is currently in the initial phase of vaccine rollout with the availability of Sinovac and AstraZeneca vaccines in the country. Likewise, the country is in the advanced stages of negotiations with the COVAX Facility and various other vaccine manufacturers.')
 		image = Image.open('vaccine tracker.png')
-		st.image(image, caption='', width = 600)
+		st.image(image, caption='', width = 800)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	st.subheader('COVID-19 Vaccine Brands')
 	if st.button('Know your COVID-19 vaccine brands!'):
-		brand = st.selectbox('Select Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
-		if brand == 'Pfizer-BioNTech':
-			image = Image.open('pfizer.png')
-			st.image(image, caption='', column = 800)		
-		if brand == 'Oxford-AstraZeneca':
-			image = Image.open('astrazeneca.png')
-			st.image(image, caption='', column = 800)	
-		if brand == 'CoronaVac (Sinovac)':
-			image = Image.open('sinovac.png')
-			st.image(image, caption='', column = 800)	
-		if brand == 'Sputnik V':
-			image = Image.open('sputnik.png')
-			st.image(image, caption='', column = 800)	
+	brand = st.selectbox('Select Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
+	if brand == 'Pfizer-BioNTech':
+		image = Image.open('pfizer.png')
+		st.image(image, caption='', width = 600)
+		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')		
+	if brand == 'Oxford-AstraZeneca':
+		image = Image.open('astrazeneca.png')
+		st.image(image, caption='', width = 600)
+		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
+	if brand == 'CoronaVac (Sinovac)':
+		image = Image.open('sinovac.png')
+		st.image(image, caption='', width = 600)
+		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
+	if brand == 'Sputnik V':
+		image = Image.open('sputnik.png')
+		st.image(image, caption='', width = 600)	
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
 	st.subheader('Necessity of Vaccination')
