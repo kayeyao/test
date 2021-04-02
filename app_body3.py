@@ -328,8 +328,8 @@ for i in range(0, len(vaccine_faq)):
    faq.append(vaccine_faq['Question'][i])
    faq.append(vaccine_faq['Answer'][i])
 for i in range(0, len(covid_faq)):
-   faq.append(vaccine_faq['Question'][i])
-   faq.append(vaccine_faq['Answer'][i])
+   faq.append(covid_faq['Question'][i])
+   faq.append(covid_faq['Answer'][i])
 
 
 faqclean=[]
