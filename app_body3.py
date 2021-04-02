@@ -374,10 +374,10 @@ def get_text():
     return input_text
 
 def chatbot():
-	question = Statement(get_text())
+	question = get_text()
 
 	if question.lower() != 'end':
-		response = chatbot.get_response(preprocessor(question))
+		response = chatbot.get_response(Statement(preprocessor(question)))
         	
 		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
 		#print('\nResponse: ' + str(response))
