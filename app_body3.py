@@ -390,7 +390,7 @@ def chatbot():
 			trainer.train([preprocessor(question), correct_response])
 			print('Response added to bot!')
 	else:
-		break
+		#break
 		#st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
 
 
