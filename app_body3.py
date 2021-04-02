@@ -369,19 +369,19 @@ def chatbot():
 	while True:
     		question = get_text()
     
-	if question.lower() != 'end':
-        	response = chatbot.get_response(preprocessor(question))
-        	print('\nResponse: ' + str(response))
-        	print('Confidence: ' + str(response.confidence))
+		if question.lower() != 'end':
+        		response = chatbot.get_response(preprocessor(question))
+        		print('\nResponse: ' + str(response))
+        		print('Confidence: ' + str(response.confidence))
         
-        	print('I am still learning. Does the response answer your question? Please type yes or no.')
+        		print('I am still learning. Does the response answer your question? Please type yes or no.')
         
-        	if get_feedback() is False:
-            		correct_response = input('Please input correct response: ')
-            		trainer.train([preprocessor(question), correct_response])
-            		print('Response added to bot!')
-	else:
-		break
+        		if get_feedback() is False:
+            			correct_response = input('Please input correct response: ')
+            			trainer.train([preprocessor(question), correct_response])
+            			print('Response added to bot!')
+		else:
+			break
 
 
 
