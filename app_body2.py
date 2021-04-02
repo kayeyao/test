@@ -101,19 +101,19 @@ def vaccine_info():
 
 	st.subheader('COVID-19 Vaccine Brands')
 	if st.button('Know your COVID-19 vaccine brands!'):
-		brand = st.selectbox('Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
+		brand = st.selectbox('Select Vaccine Brand',('Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
 		if brand == 'Pfizer-BioNTech':
 			image = Image.open('pfizer.png')
-			st.image(image, caption='', column_width = True)		
+			st.image(image, caption='', column = 800)		
 		if brand == 'Oxford-AstraZeneca':
 			image = Image.open('astrazeneca.png')
-			st.image(image, caption='', column_width = True)	
+			st.image(image, caption='', column = 800)	
 		if brand == 'CoronaVac (Sinovac)':
 			image = Image.open('sinovac.png')
-			st.image(image, caption='', column_width = True)	
+			st.image(image, caption='', column = 800)	
 		if brand == 'Sputnik V':
 			image = Image.open('sputnik.png')
-			st.image(image, caption='', column_width = True)	
+			st.image(image, caption='', column = 800)	
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
 	st.subheader('Necessity of Vaccination')
