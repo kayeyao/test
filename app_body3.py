@@ -20,6 +20,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
 from nltk.stem import WordNetLemmatizer
+import mysql.connector
 
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
@@ -319,22 +320,21 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+#vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
 
-faq = []
-for i in range(0, len(vaccine_faq)):
-    faq.append(vaccine_faq['Question'][i])
-    faq.append(vaccine_faq['Answer'][i])
+#faq = []
+#for i in range(0, len(vaccine_faq)):
+#   faq.append(vaccine_faq['Question'][i])
+#   faq.append(vaccine_faq['Answer'][i])
 
-faqclean=[]
+#faqclean=[]
 
-for i in range(0,len(faq)//2):
-    faqclean.append(preprocessor(faq[2*i]).rstrip())
-    faqclean.append(faq[2*i+1])
+#for i in range(0,len(faq)//2):
+#   faqclean.append(preprocessor(faq[2*i]).rstrip())
+#   faqclean.append(faq[2*i+1])
 
 chatbot = ChatBot('CoronaBot',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
-    response_selection_method='chatterbot.response_selection.get_most_frequent_response',
     logic_adapters=[      
         {'import_path': 'chatterbot.logic.BestMatch',
          'default_response': 'I am sorry, but I do not understand. I am still learning.',
@@ -349,13 +349,13 @@ chatbot = ChatBot('CoronaBot',
          'statement_comparison_function': 'chatterbot.comparisons.synset_distance',
          'maximum_similarity_threshold': 0.95}
     ],
-    database_uri='sqlite:///database.sqlite3',
+    database_uri='database.sqlite3',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-training_data = faqclean
+#training_data = faqclean
 trainer = ListTrainer(chatbot)
-trainer.train(training_data)
+#trainer.train(training_data)
 
 def get_feedback():
 
