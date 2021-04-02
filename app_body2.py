@@ -26,12 +26,7 @@ def covid_info():
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 	
 	if st.button('What are the symptoms of COVID-19?'):	
-		st.write('The most common symptoms of COVID-19 are Fever, Dry cough, and Fatigue.\n
-Other symptoms that are less common and may affect some patients include Loss of taste or smell, Nasal congestion, Conjunctivitis (also known as red eyes), Sore throat, Headache, Muscle or joint pain, Different types of skin rash, Nausea or vomiting, Diarrhea, Chills or dizziness.\n
-Symptoms of severe COVID‐19 disease include Shortness of breath, Loss of appetite, Confusion, Persistent pain or pressure in the chest, High temperature (above 38 °C).\n
-Other less common symptoms are Irritability, Confusion, Reduced consciousness (sometimes associated with seizures), Anxiety, Depression, Sleep disorders.\n
-More severe and rare neurological complications such as strokes, brain inflammation, delirium and nerve damage.\n
-People of all ages who experience fever and/or cough associated with difficulty breathing or shortness of breath, chest pain or pressure, or loss of speech or movement should seek medical care immediately. If possible, call your health care provider, hotline or health facility first, so you can be directed to the right clinic.')
+		st.write('The most common symptoms of COVID-19 are Fever, Dry cough, and Fatigue.\n Other symptoms that are less common and may affect some patients include Loss of taste or smell, Nasal congestion, Conjunctivitis (also known as red eyes), Sore throat, Headache, Muscle or joint pain, Different types of skin rash, Nausea or vomiting, Diarrhea, Chills or dizziness.\n Symptoms of severe COVID‐19 disease include Shortness of breath, Loss of appetite, Confusion, Persistent pain or pressure in the chest, High temperature (above 38 °C).\n Other less common symptoms are Irritability, Confusion, Reduced consciousness (sometimes associated with seizures), Anxiety, Depression, Sleep disorders.\n More severe and rare neurological complications such as strokes, brain inflammation, delirium and nerve damage.\n People of all ages who experience fever and/or cough associated with difficulty breathing or shortness of breath, chest pain or pressure, or loss of speech or movement should seek medical care immediately. If possible, call your health care provider, hotline or health facility first, so you can be directed to the right clinic.')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
 
 
