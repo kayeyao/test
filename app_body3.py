@@ -373,9 +373,8 @@ def get_text():
     input_text = st.text_input("Input Question: ")
     return input_text
 
-def chatbot():
-	question = 'What is COVID-19?' 
-	#get_text()
+def chatterbot():
+	question = get_text()
 
 	if question.lower() != 'end':
 		response = chatbot.get_response(preprocessor(question))
