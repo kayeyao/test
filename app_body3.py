@@ -332,7 +332,7 @@ for i in range(0,len(faq)//2):
    faqclean.append(preprocessor(faq[2*i]).rstrip())
    faqclean.append(faq[2*i+1])
 
-chatbot = ChatBot('CoronaBot',
+chatbot = ChatBot('CoronaBot', read_only = True,
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     logic_adapters=[      
         {'import_path': 'chatterbot.logic.BestMatch',
@@ -348,7 +348,7 @@ chatbot = ChatBot('CoronaBot',
          'statement_comparison_function': 'chatterbot.comparisons.synset_distance',
          'maximum_similarity_threshold': 0.95}
     ],
-    #database_uri='sqlite:///database.sqlite3',
+    database_uri='sqlite:///database.sqlite3',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
@@ -379,7 +379,7 @@ def chatterbot():
 	if question.lower() != 'end':
 		response = chatbot.get_response(preprocessor(question))
         	
-		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
+		st.text_area("Bot:", value = response, height=300, max_chars=None, key=None)
 		#print('\nResponse: ' + str(response))
 		#print('Confidence: ' + str(response.confidence))
         
