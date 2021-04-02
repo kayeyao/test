@@ -20,10 +20,16 @@ countries = ('World', 'Afghanistan', 'Africa', 'Albania', 'Algeria', 'Andorra', 
 
 def covid_info():
 	st.header('Frequently Asked Questions on COVID-19')
-	
+
+	st.subheader('COVID-19')	
 	if st.button('What is COVID-19?'):	
 		st.write('COVID-19 is the disease caused by a new coronavirus called SARS-CoV-2.  WHO first learned of this new virus on 31 December 2019, following a report of a cluster of cases of ‘viral pneumonia’ in Wuhan, People’s Republic of China.')
 		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19')
+
+	if st.button('Why is the disease being called coronavirus disease, COVID-19?'):	
+		st.write('On February 11, 2020 the World Health Organization announced an official name for the disease that is causing the 2019 novel coronavirus outbreak, first identified in Wuhan China. The new name of this disease is coronavirus disease 2019, abbreviated as COVID-19. In COVID-19, “CO” stands for corona, “VI” for virus, and ”D” for disease. Formerly, this disease was referred to as “2019 novel coronavirus” or “2019-nCoV.')
+		st.write('Source: Centers for Disease Control and Prevention - https://www.cdc.gov/coronavirus/2019-ncov/faq.html#Basics')
+
 
 	st.subheader('COVID-19 Symptoms')	
 	if st.button('What are the symptoms of COVID-19?'):	
