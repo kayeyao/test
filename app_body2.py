@@ -96,7 +96,7 @@ def vaccine_info():
 	if st.button('When will the COVID-19 vaccine be available in the Philippines?'):	
 		st.write('The government is currently in the initial phase of vaccine rollout with the availability of Sinovac and AstraZeneca vaccines in the country. Likewise, the country is in the advanced stages of negotiations with the COVAX Facility and various other vaccine manufacturers.')
 		image = Image.open('vaccine tracker.png')
-		st.image(image, caption='', column = 600)
+		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	st.subheader('COVID-19 Vaccine Brands')
