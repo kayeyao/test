@@ -11,7 +11,7 @@ from PIL import Image
 from streamlit import caching
 from streamlit_folium import folium_static
 
-import app_body2 as body
+import app_body3 as body
 
 warnings.filterwarnings('ignore')
 
