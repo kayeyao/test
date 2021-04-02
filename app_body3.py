@@ -321,16 +321,16 @@ def preprocessor(sentence):
 
 #vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
 
-#faq = []
-#for i in range(0, len(vaccine_faq)):
-#   faq.append(vaccine_faq['Question'][i])
-#   faq.append(vaccine_faq['Answer'][i])
+faq = []
+for i in range(0, len(vaccine_faq)):
+   faq.append(vaccine_faq['Question'][i])
+   faq.append(vaccine_faq['Answer'][i])
 
-#faqclean=[]
+faqclean=[]
 
-#for i in range(0,len(faq)//2):
-#   faqclean.append(preprocessor(faq[2*i]).rstrip())
-#   faqclean.append(faq[2*i+1])
+for i in range(0,len(faq)//2):
+   faqclean.append(preprocessor(faq[2*i]).rstrip())
+   faqclean.append(faq[2*i+1])
 
 chatbot = ChatBot('CoronaBot',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
@@ -352,9 +352,9 @@ chatbot = ChatBot('CoronaBot',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-#training_data = faqclean
+training_data = faqclean
 trainer = ListTrainer(chatbot)
-#trainer.train(training_data)
+trainer.train(training_data)
 
 def get_feedback():
 
@@ -377,19 +377,18 @@ def chatbot():
 	question = get_text()
 
 	if question.lower() != 'end':
-		#response = chatbot.get_response(preprocessor(question))
+		response = chatbot.get_response(preprocessor(question))
         	
-		response = 'hello'	
 		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
 		#print('\nResponse: ' + str(response))
 		#print('Confidence: ' + str(response.confidence))
         
 		print('I am still learning. Does the response answer your question? Please type yes or no.')
        
-		if get_feedback() is False:
-			correct_response = input('Please input correct response: ')
-			trainer.train([preprocessor(question), correct_response])
-			print('Response added to bot!')
+		#if get_feedback() is False:
+		#	correct_response = input('Please input correct response: ')
+		#	trainer.train([preprocessor(question), correct_response])
+		#	print('Response added to bot!')
 	else:
 		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
 
