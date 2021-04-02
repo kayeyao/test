@@ -150,7 +150,7 @@ def vaccine_info():
 		st.write('The COVID-19 pandemic has taken many lives, and continues to put many at risk. It has also disrupted the economy, leaving many Filipinos jobless or underemployed. With the availability of COVID-19 vaccines which can (1) prevent symptomatic infection and possibly (2) prevent severe infection and (3) prevent transmission, we have the opportunity to get ahead of the virus. However, like many vaccines being used in the past decades, the protective effect on our community is maximized only when at least 70% of the population get vaccinated. For example, if your barangay has 100,000 people, at least 70,000 should be vaccinated to ensure protection of the community. So remember, this is not just about getting you or your family vaccinated, this is about getting your barangay, city, province up for it.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
-	if st.button('If I have already had COVID-19 and recovered, do I still need to get vaccinated with a COVID-19 vaccine?')
+	if st.button('If I have already had COVID-19 and recovered, do I still need to get vaccinated with a COVID-19 vaccine?'):
 		st.write('Yes, you should be vaccinated regardless of whether you already had COVID-19. That’s because experts do not yet know how long you are protected from getting sick again after recovering from COVID-19. Even if you have already recovered from COVID-19, it is possible—although rare—that you could be infected with the virus that causes COVID-19 again.')
 		st.write('Source: Centers for Disease Control and Prevention  - https://www.cdc.gov/coronavirus/2019-ncov/vaccines/facts.html')
 
