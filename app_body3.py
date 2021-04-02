@@ -339,7 +339,7 @@ chatbot = ChatBot('CoronaBot',
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-training_data = faqclean
+#training_data = faqclean
 trainer = ListTrainer(chatbot)
 
 def get_feedback():
