@@ -7,3 +7,4 @@ folium==0.11.0
 streamlit-folium==0.1.0
 geopandas==0.8.1
 matplotlib==3.3.3
+chatterbot==1.0.4
