@@ -37,5 +37,6 @@ if add_selectbox == 'Information on COVID-19':
 if add_selectbox == 'COVID-19 Statistics':
 	body.covid_statistics_table()
 	st.write('Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv')
+	st.write('')
 	body.covid_statistics()
 	st.write('Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv')
