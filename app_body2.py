@@ -170,10 +170,6 @@ def vaccine_info():
 		st.write('The objective is to provide equitable access to safe and effective COVID-19 vaccines to the priority eligible groups or almost 70 million Filipinos by 2021, 60-70% of Filipinos by 2022, and followed by the remaining Filipino population in the next three (3) years.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
-	if st.button('If I am not part of the priority group, how will I get access to the vaccine?'):	
-		st.write('The government is continuing negotiations to ensure adequate vaccine supply for all Filipinos, including those not in the priority groups.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
-
 	if st.button('What is the required age for vaccination?'):	
 		st.write('This will depend on the vaccine. For those currently available, Sinovac can be given to clinically healthy individuals 18 to 59 years old, while AstraZeneca can be given to those 18 years old and above, including senior citizens.DOH shall develop a Department Memorandum for every COVID vaccine to be deployed in the country and this DM shall indicate the target or recommended age groups per vaccine.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
