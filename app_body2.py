@@ -193,7 +193,7 @@ def vaccine_info():
 	if st.button('What is the interval between the 1st and 2nd dose of COVID vaccine?'):	
 		st.write('Interval of doses varies per vaccine. For those currently available, Sinovac is taken 4 weeks (28 days) apart, while AstraZeneca is taken 4 to 12 weeks apart.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
-WHAT SHOULD BE DONE IN CASE AN INDIVIDUAL REFUSES OR MISSES THE SECOND DOSE OF VACCINE?
+
 	if st.button('What should be done in case an individual refuses or misses the second dose of vaccine?'):	
 		st.write('The US Centers for Disease Control and Prevention (CDC) allow for a 4-day grace period when assessing on-time receipt. People should try to get the second dose during this period or as soon after as possible. However, if the second dose is given later than this, you do not need to restart the vaccine. You still only need to get the second dose. However, it is important to note that the first dose did not protect as many people as were protected after the second dose, so if you are exposed to SARS-CoV-2 during the delay, you may or may not have enough immunity to prevent you from experiencing symptoms.')
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
