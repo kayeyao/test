@@ -77,7 +77,7 @@ def covid_info():
 
 	st.subheader('COVID-19 Prevention')
 	if st.button('What can I do to prevent the spread of COVID-19?'):	
-		st.write('DOH advises the public to practice protective measures. It is still the best way to protect oneself against COVID-19. 
+		st.write('DOH advises the public to practice protective measures. It is still the best way to protect oneself against COVID-19.') 
 		st.write('- Practice frequent and proper handwashing - wash hands often with soap and water for at least 20 seconds. Use an alcohol-based hand sanitizer if soap and water are not available.')
 		st.write('- Practice proper cough etiquette - Cover mouth and nose using tissue or sleeves/bend of the elbow when coughing or sneezing; Move away from people when coughing; Do not spit; Throw away used tissues properly; Always wash your hands after sneezing or coughing; Use alcohol/sanitizer.')
 		st.write('- Maintain distance of at least one meter away from individual/s experiencing respiratory symptoms.')
