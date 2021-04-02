@@ -21,7 +21,7 @@ countries = ('World', 'Afghanistan', 'Africa', 'Albania', 'Algeria', 'Andorra', 
 st.markdown("""
 <style>
 .small-font {
-    font-size:10px !important;
+    font-size:6px !important;
 }
 </style>
 """, unsafe_allow_html=True)
