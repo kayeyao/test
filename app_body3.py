@@ -358,14 +358,14 @@ trainer = ListTrainer(chatbot)
 
 def get_feedback():
 
-    text = input()
+    text = st.text_input('I am still learning. Does the response answer your question? Please type YES or NO.')
 
     if 'yes' in text.lower():
         return True
     elif 'no' in text.lower():
         return False
     else:
-        print('Please type either "Yes" or "No"')
+        print('Please type either YES or No')
         return get_feedback()
 
 
