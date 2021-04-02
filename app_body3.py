@@ -372,10 +372,10 @@ def chatbot():
         
 		print('I am still learning. Does the response answer your question? Please type yes or no.')
        
-       		if get_feedback() is False:
-       			correct_response = input('Please input correct response: ')
-       			trainer.train([preprocessor(question), correct_response])
-       			print('Response added to bot!')
+		if get_feedback() is False:
+			correct_response = input('Please input correct response: ')
+			trainer.train([preprocessor(question), correct_response])
+			print('Response added to bot!')
 	else:
 		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
 
