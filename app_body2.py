@@ -94,7 +94,7 @@ def covid_statistics_table():
 
 def covid_statistics():
 	st.header('COVID-19 Statistics')
-	col1, col2 = st.beta_columns(3)
+	col1, col2 = st.beta_columns(2)
 	country = st.multiselect('Country', countries)
 	
 	status = col1.selectbox('Information',('Daily Cases','Total Cases','Daily Deaths','Total Deaths','Total Vaccinations'))
