@@ -262,7 +262,7 @@ def covid_statistics():
 
 	country = st.multiselect('Country', countries, default = ['World'])
 		
-	status = col1.selectbox('Information',('Daily Cases','Total Cases','Daily Deaths','Total Deaths','Total Vaccinations'))
+	status = col1.selectbox('Information',('Total Cases','Daily Cases','Total Deaths','Daily Deaths','Total Vaccinations'))
 
 	length = col2.selectbox('Timeframe',('All Time', '1 Week', '2 Weeks', '1 Month', '2 Months'))
 	
