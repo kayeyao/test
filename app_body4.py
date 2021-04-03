@@ -20,7 +20,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
 from nltk.stem import WordNetLemmatizer
-
+import SessionState
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
 stats['date'] = pd.to_datetime(stats['date'])
