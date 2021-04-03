@@ -363,7 +363,7 @@ trainer = ListTrainer(chatbot)
 trainer.train(training_data)
 
 def get_feedback():
-    st.write('I am still learning. If the response does not answer your question, please input the correct response below.)
+    st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
     text = st.text_input('I am still learning. , key = '1')
 
     if 'yes' in text.lower():
