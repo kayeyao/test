@@ -381,22 +381,25 @@ def get_text():
 
 def chatterbot():
 	question = get_text()
-	if question == 'Please type in your question.':
-		st.text_area("Bot:", value = '', height=300, max_chars=None, key=None)
+	if question == or('','Please type in your question.'):
+		st.text_area("Bot:", value = '', height=200, max_chars=None, key=None)
 
 	else:
 		response = chatbot.get_response(preprocessor(question))
         	
 		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
 		
-		st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
+		st.write('I am still learning. Does this response answer your question?')
 		
-		feedback = st.empty()
-		correct_response = feedback.text_input('Input Correct Response:' , key = '1')
+		if st.button('Yes'):
+			continue
+		if st.button('No'):
+			correct_response = st.text_input('Input Correct Response:' , key = '1')
 
-		if st.button('Submit Response'):
-			trainer.train([preprocessor(question), correct_response])
-			st.write('Response added to bot!')
+			if st.button('Submit Response'):
+				trainer.train([preprocessor(question), correct_response])
+				st.write('Response added to bot!')
+			
 			
 
 
