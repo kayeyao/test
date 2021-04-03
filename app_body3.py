@@ -391,7 +391,7 @@ def chatterbot():
 		
 		st.write('I am still learning. Does this response answer your question?')
 		
-		col1, col2 = st.beta_columns([1,1,7])	
+		col1, col2, col3 = st.beta_columns([1,1,7])	
 		if col1.button('Yes'):
 			st.write('Thank you for your feedback.')
 		
