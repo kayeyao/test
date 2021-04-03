@@ -389,8 +389,8 @@ def chatterbot():
         	
 		st.text_area("Bot:", value = response, height=300, max_chars=None, key=None)
 		
- 		st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
-    		feedback = st.text_input('Input Correct Response:' , key = '1')
+		st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
+		feedback = st.text_input('Input Correct Response:' , key = '1')
 
 		if st.button('Submit Response'):
 			trainer.train([preprocessor(question), feedback])
