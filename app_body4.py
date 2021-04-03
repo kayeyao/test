@@ -459,7 +459,7 @@ def chatterbot():
 	if vaccinebutton:
 		session_state2.vaccinebutton = True
 
-	if session_state.vaccinebutton:
+	if session_state2.vaccinebutton:
 		vaccinechatterbot()
 
 
