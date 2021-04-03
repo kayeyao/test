@@ -381,7 +381,7 @@ def get_text():
 
 def chatterbot():
 	question = get_text()
-	if question == '' or 'Please type in your question.':
+	if question == 'Please type in your question.':
 		st.text_area("Bot:", value = '', height=200, max_chars=None, key=None)
 
 	else:
