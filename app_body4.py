@@ -480,7 +480,7 @@ def recommend_questions(question_input, dataset):
 
 	for i in range(0,5):
 		if st.button(recommendeddf.iloc[i]['Question']):
-			recommendeddf.iloc[i]['Answer']		
+			st.write(recommendeddf.iloc[i]['Answer'])		
 
 
 
