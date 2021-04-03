@@ -391,10 +391,12 @@ def chatterbot():
 		
 		st.write('I am still learning. Does this response answer your question?')
 		
-		if st.button('Yes'):
+		col1, col2, col3 = st.beta_columns([1,1,5])	
+		if col1.button('Yes'):
 			st.write('Thank you for your feedback.')
 			question = 'Please type in your question.'
-		if st.button('No'):
+		
+		if col2.button('No'):
 			correct_response = st.text_input('Input Correct Response:' , key = '1')
 
 			if st.button('Submit Response'):
