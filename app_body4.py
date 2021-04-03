@@ -425,7 +425,7 @@ def vaccinechatterbot():
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key=None)
 
-		else:
+	else:
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key=None)
