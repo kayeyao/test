@@ -360,7 +360,7 @@ chatbot = ChatBot('CoronaBot', read_only = True,
 
 training_data = faqclean
 trainer = ListTrainer(chatbot)
-trainer.train(training_data)
+#trainer.train(training_data)
 
 def get_feedback():
     st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
