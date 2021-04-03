@@ -319,27 +319,27 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-#vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
-#covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
 
-#covid_faq2 = []
-#vaccine_faq2 = []
-#for i in range(0, len(vaccine_faq)):
-#   vaccine_faq2.append(vaccine_faq['Question'][i])
-#   vaccine_faq2.append(vaccine_faq['Answer'][i])
-#for i in range(0, len(covid_faq)):
-#   covid_faq2.append(covid_faq['Question'][i])
-#   covid_faq2.append(covid_faq['Answer'][i])
+covid_faq2 = []
+vaccine_faq2 = []
+for i in range(0, len(vaccine_faq)):
+   vaccine_faq2.append(vaccine_faq['Question'][i])
+   vaccine_faq2.append(vaccine_faq['Answer'][i])
+for i in range(0, len(covid_faq)):
+   covid_faq2.append(covid_faq['Question'][i])
+   covid_faq2.append(covid_faq['Answer'][i])
 
 
-#covidfaqclean=[]
-#vaccinefaqclean=[]
-#for i in range(0,len(covid_faq2)//2):
-#   covidfaqclean.append(preprocessor(covid_faq2[2*i]).rstrip())
-#   covidfaqclean.append(covid_faq2[2*i+1])
-#for i in range(0,len(vaccine_faq2)//2):
-#   vaccinefaqclean.append(preprocessor(vaccine_faq2[2*i]).rstrip())
-#   vaccinefaqclean.append(vaccine_faq2[2*i+1])
+covidfaqclean=[]
+vaccinefaqclean=[]
+for i in range(0,len(covid_faq2)//2):
+   covidfaqclean.append(preprocessor(covid_faq2[2*i]).rstrip())
+   covidfaqclean.append(covid_faq2[2*i+1])
+for i in range(0,len(vaccine_faq2)//2):
+   vaccinefaqclean.append(preprocessor(vaccine_faq2[2*i]).rstrip())
+   vaccinefaqclean.append(vaccine_faq2[2*i+1])
 
 
 covidchatbot = ChatBot('COVIDBot', read_only = True,
@@ -382,12 +382,12 @@ vaccinechatbot = ChatBot('VaccineBot', read_only = True,
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-#covid_training_data = covidfaqclean
-#vaccine_training_data = vaccinefaqclean
+covid_training_data = covidfaqclean
+vaccine_training_data = vaccinefaqclean
 covidtrainer = ListTrainer(covidchatbot)
 vaccinetrainer = ListTrainer(vaccinechatbot)
-#covidtrainer.train(covid_training_data)
-#covidtrainer.train(vaccine_training_data)
+covidtrainer.train(covid_training_data)
+covidtrainer.train(vaccine_training_data)
 
 #covidchatbot.storage.drop()
 #vaccinechatbot.storage.drop()
