@@ -21,6 +21,9 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
 from nltk.stem import WordNetLemmatizer
 import SessionState
+import fuzzywuzzy
+from fuzzywuzzy import fuzz
+
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
 stats['date'] = pd.to_datetime(stats['date'])
@@ -382,12 +385,12 @@ vaccinechatbot = ChatBot('VaccineBot', read_only = True,
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-covid_training_data = covidfaqclean
-vaccine_training_data = vaccinefaqclean
+#covid_training_data = covidfaqclean
+#vaccine_training_data = vaccinefaqclean
 covidtrainer = ListTrainer(covidchatbot)
 vaccinetrainer = ListTrainer(vaccinechatbot)
-covidtrainer.train(covid_training_data)
-covidtrainer.train(vaccine_training_data)
+#covidtrainer.train(covid_training_data)
+#covidtrainer.train(vaccine_training_data)
 
 #covidchatbot.storage.drop()
 #vaccinechatbot.storage.drop()
@@ -415,6 +418,7 @@ def covidchatterbot():
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
+		recommend_questions(question, covid_faq)
 
 def vaccinechatterbot():
 	placeholder2 = st.empty()
@@ -438,6 +442,7 @@ def vaccinechatterbot():
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '5')
 
+		recommend_questions(question, vaccine_faq)
 
 def chatterbot():
 	st.subheader('Hi! How can I help you?')
@@ -463,14 +468,19 @@ def chatterbot():
 		vaccinechatterbot()
 
 
+def recommend_questions(question_input, dataset):
+	output_list = [fuzz.token_set_ratio(i,question_input) for i in dataset["Question"]]
+	similarity_score = list(enumerate(output_list))
+	similarity_score = sorted(similarity_score, key=lambda x: x[1], reverse=True)
+	similarity_score = similarity_score[1:6]
+	question_indices = [i[0] for i in similarity_score]
+	recommended=dataset[['Question','Answer']].iloc[question_indices]
+	recommendeddf=pd.DataFrame(recommended)
+	st.write("Looking for another answer? Try these questions:")
 
-
-
-
-
-
-
-
+	for i in [:5]:
+		if st.button(recommendeddf.iloc[i]['Question']):
+			recommendeddf.iloc[i]['Answer']		
 
 
 
