@@ -416,7 +416,7 @@ def covidchatterbot():
 
 
 def vaccinechatterbot():
-	question = st.text_input("Input Question: ", "Please type in your question.", key = '3')
+	question = st.text_input("Input Question: ", "Please type in your question.", key = '0')
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
