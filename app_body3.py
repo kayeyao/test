@@ -364,7 +364,7 @@ trainer.train(training_data)
 
 def get_feedback():
 
-    text = st.text_input('I am still learning. Does the response answer your question? Please type YES or NO.')
+    text = st.text_input('I am still learning. Does the response answer your question? Please type YES or NO.', key = 1)
 
     if 'yes' in text.lower():
         return True
@@ -376,27 +376,22 @@ def get_feedback():
 
 
 def get_text():
-    input_text = st.text_input("Input Question: ", "What is COVID-19?")
+    input_text = st.text_input("Input Question: ", "What is COVID-19?", key = 0)
     return input_text
 
 def chatterbot():
 	question = get_text()
 
-	if question.lower() != 'end':
-		response = chatbot.get_response(preprocessor(question))
+	response = chatbot.get_response(preprocessor(question))
         	
-		st.text_area("Bot:", value = response, height=300, max_chars=None, key=None)
+	st.text_area("Bot:", value = response, height=300, max_chars=None, key=None)
 		#print('\nResponse: ' + str(response))
 		#print('Confidence: ' + str(response.confidence))
-        
-		print('I am still learning. Does the response answer your question? Please type yes or no.')
-       
-		#if get_feedback() is False:
-		#	correct_response = input('Please input correct response: ')
-		#	trainer.train([preprocessor(question), correct_response])
-		#	print('Response added to bot!')
-	else:
-		st.text_area("Bot:", value="Please start the bot by clicking sidebar button", height=200, max_chars=None, key=None)
+               
+	if get_feedback() is False:
+		correct_response = st.text_input('Please input correct response: ', key = 2)
+		trainer.train([preprocessor(question), correct_response])
+		st.write('Response added to bot!')
 
 	st.write("For more information on COVID-19 Vaccination, visit DOH's website: https://doh.gov.ph/vaccines")
 
