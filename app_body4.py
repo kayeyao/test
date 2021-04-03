@@ -383,8 +383,8 @@ vaccinechatbot = ChatBot('VaccineBot', read_only = True,
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-covid_training_data = faqcovidclean
-vaccine_training_data = faqvaccineclean
+covid_training_data = covidfaqclean
+vaccine_training_data = vaccinefaqclean
 covidtrainer = ListTrainer(covidchatbot)
 vaccinetrainer = ListTrainer(vaccinechatbot)
 covidtrainer.train(covid_training_data)
@@ -425,7 +425,7 @@ def vaccinechatterbot():
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key=None)
 
-	else:
+		else:
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key=None)
