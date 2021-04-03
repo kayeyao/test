@@ -448,12 +448,14 @@ def chatterbot():
 
 	if covidbutton:
 		session_state1.covidbutton = True
-
+		session_state2.vaccinebutton = False
+	
 	if session_state1.covidbutton:
 		covidchatterbot()
 
 	if vaccinebutton:
 		session_state2.vaccinebutton = True
+		session_state1.covidbutton = False
 
 	if session_state2.vaccinebutton:
 		vaccinechatterbot()
