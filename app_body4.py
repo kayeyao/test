@@ -414,21 +414,21 @@ def covidchatterbot():
 		place_holder = st.empty()
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '1')
 		
-		if st.button('Submit Response', key = '1'):
+		if st.button('Submit Response', key = '2'):
 			trainer.train([preprocessor(question), correct_response])
 			st.subheader('Response added to bot!')
-			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '1')
+			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
 
 def vaccinechatterbot():
 	question = get_text()
 	if question == 'Please type in your question.':
-		st.text_area("Response:", value = '', height=200, max_chars=None, key = '2')
+		st.text_area("Response:", value = '', height=200, max_chars=None, key = '1')
 
 	else:
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
-		st.text_area("Response:", value = response, height=200, max_chars=None, key = '2')
+		st.text_area("Response:", value = response, height=200, max_chars=None, key = '1')
 		
 		st.write('')
 		st.write('')
@@ -442,14 +442,12 @@ def vaccinechatterbot():
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
 
-session_state = SessionState.get(name="", button_sent=False)
-
-
 def chatterbot():
 	st.write('How can I help you?')
-	if session_state.button('COVID-19 Info', key = '1'):
+	session_state = SessionState.get(name="", button_sent=False)
+	if session_state.button('COVID-19 Info'):
 		covidchatterbot()
-	if session_state.button('COVID-19 Vaccine Info', key = '2'):
+	if session_state.button('COVID-19 Vaccine Info'):
 		vaccinechatterbot()
 
 
