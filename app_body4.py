@@ -418,7 +418,7 @@ def covidchatterbot():
 
 def vaccinechatterbot():
 	placeholder2 = st.empty()
-	question = placeholder2.text_input("Input Question: ", "Please type in your question.", key = '3')
+	question = placeholder2.text_input("Input Question: ", "Please type in your question.", key = '0')
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
@@ -446,7 +446,7 @@ def chatterbot():
 	session_state2 = SessionState.get(name="", vaccinebutton=False)
 
 	covidbutton = col1.button('Questions on COVID-19', key = '0')
-	vaccinebutton = col2.button('Questions on COVID-19 Vaccine', key = '3')
+	vaccinebutton = col2.button('Questions on COVID-19 Vaccine', key = '0')
 
 	if covidbutton:
 		session_state1.covidbutton = True
