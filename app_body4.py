@@ -444,20 +444,20 @@ def vaccinechatterbot():
 
 def chatterbot():
 	st.write('How can I help you?')
-	session_state = SessionState.get(name="", button_sent=False)
-	
+	session_state1 = SessionState.get(name="", covidbutton=False)
+	session_state2 = SessionState.get(name="", vaccinebutton=False)
 
 	covidbutton = st.button('COVID-19 Info')
 	vaccinebutton = st.button('COVID-19 Vaccine Info')
 
 	if covidbutton:
-		session_state.covidbutton = True
+		session_state1.covidbutton = True
 
-	if session_state.covidbutton:
+	if session_state1.covidbutton:
 		covidchatterbot()
 
 	if vaccinebutton:
-		session_state.vaccinebutton = True
+		session_state2.vaccinebutton = True
 
 	if session_state.vaccinebutton:
 		vaccinechatterbot()
