@@ -364,7 +364,7 @@ trainer.train(training_data)
 
 def get_feedback():
 
-    text = st.text_input('I am still learning. Does the response answer your question? Please type YES or NO.', key = 1)
+    text = st.text_input('I am still learning. Does the response answer your question? Please type YES or NO.', key = '1')
 
     if 'yes' in text.lower():
         return True
@@ -376,7 +376,7 @@ def get_feedback():
 
 
 def get_text():
-    input_text = st.text_input("Input Question: ", "What is COVID-19?", key = 0)
+    input_text = st.text_input("Input Question: ", "What is COVID-19?", key = '0')
     return input_text
 
 def chatterbot():
@@ -389,7 +389,7 @@ def chatterbot():
 		#print('Confidence: ' + str(response.confidence))
                
 	if get_feedback() is False:
-		correct_response = st.text_input('Please input correct response: ', key = 2)
+		correct_response = st.text_input('Please input correct response: ', key = '2')
 		trainer.train([preprocessor(question), correct_response])
 		st.write('Response added to bot!')
 
