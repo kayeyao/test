@@ -442,11 +442,14 @@ def vaccinechatterbot():
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
 
+session_state = SessionState.get(name="", button_sent=False)
+
+
 def chatterbot():
 	st.write('How can I help you?')
-	if st.button('COVID-19 Info', key = '1'):
+	if session_state.button('COVID-19 Info', key = '1'):
 		covidchatterbot()
-	if st.button('COVID-19 Vaccine Info', key = '2'):
+	if session_state.button('COVID-19 Vaccine Info', key = '2'):
 		vaccinechatterbot()
 
 
