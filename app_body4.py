@@ -473,7 +473,6 @@ def recommend_questions(question_input, dataset):
 	similarity_score = similarity_score[1:6]
 	question_indices = [i[0] for i in similarity_score]
 	recommended=dataset[['Question','Answer']].iloc[question_indices]
-	st.write("Looking for another answer? Try these questions:")
 
 	questions = []
 	for i in range(0,5):
