@@ -389,15 +389,16 @@ def chatterbot():
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key=None)
 		
+		st.write('')
 		st.write('I am still learning. If the response does not answer your question, please type in the correct response below.')
 		
 		place_holder = st.empty()
 		correct_response = place_holder.text_input('Input Correct Response:' , '', key = '1')
 		
-		if st.button('Submit Response'):
+		if st.button('Submit Response', key = '2'):
 			trainer.train([preprocessor(question), correct_response])
 			st.write('Response added to bot!')
-			correct_response = place_holder.text_input('Input Correct Response:' , '', key = '1')
+			correct_response = place_holder.text_input('Input Correct Response:' , '', key = '2')
 		
 
 
