@@ -387,19 +387,17 @@ def chatterbot():
 	else:
 		response = chatbot.get_response(preprocessor(question))
         	
-		st.text_area("Bot:", value = response, height=300, max_chars=None, key=None)
+		st.text_area("Bot:", value = response, height=200, max_chars=None, key=None)
 		
 		st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
-		feedback = st.text_input('Input Correct Response:' , key = '1')
+		
+		feedback = st.empty()
+		correct_response = feedback.text_input('Input Correct Response:' , key = '1')
 
 		if st.button('Submit Response'):
-			trainer.train([preprocessor(question), feedback])
+			trainer.train([preprocessor(question), correct_response])
 			st.write('Response added to bot!')
-
-	st.write("For more information on COVID-19 Vaccination, visit DOH's website: https://doh.gov.ph/vaccines")
-
-
-
+			
 
 
 
