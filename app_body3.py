@@ -391,7 +391,7 @@ def chatterbot():
 		
 		st.write('I am still learning. If the response does not answer your question, please type in the correct response below.')
 		
-		placeholder = st.empty()
+		place_holder = st.empty()
 		correct_response = place_holder.text_input('Input Correct Response:' , '', key = '1')
 		
 		if st.button('Submit Response'):
