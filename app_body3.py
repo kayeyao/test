@@ -393,14 +393,14 @@ def chatterbot():
 		
 		if st.button('Yes'):
 			st.write('Thank you for your feedback.')
-			question = get_text()
+			question = 'Please type in your question.'
 		if st.button('No'):
 			correct_response = st.text_input('Input Correct Response:' , key = '1')
 
 			if st.button('Submit Response'):
 				trainer.train([preprocessor(question), correct_response])
 				st.write('Response added to bot!')
-				question = get_text()				
+				question = 'Please type in your question.'				
 
 
 
