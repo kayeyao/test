@@ -436,19 +436,20 @@ def vaccinechatterbot():
 		place_holder = st.empty()
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 		
-		if st.button('Submit Response', key = '2'):
+		if st.button('Submit Response', key = '3'):
 			vaccinetrainer.train([preprocessor(question), correct_response])
 			st.subheader('Response added to bot!')
-			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
+			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '3')
 
 
 def chatterbot():
 	st.write('How can I help you?')
+	col1,col2,col3 = st.beta_columns([1,1,2])
 	session_state1 = SessionState.get(name="", covidbutton=False)
 	session_state2 = SessionState.get(name="", vaccinebutton=False)
 
-	covidbutton = st.button('COVID-19 Info')
-	vaccinebutton = st.button('COVID-19 Vaccine Info')
+	covidbutton = col1.button('Questions on COVID-19')
+	vaccinebutton = col2.button('Questions on COVID-19 Vaccine')
 
 	if covidbutton:
 		session_state1.covidbutton = True
