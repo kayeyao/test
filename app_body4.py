@@ -408,7 +408,6 @@ def covidchatterbot():
 		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
 		
 		st.write('')
-		st.write('')
 		
 		place_holder = st.empty()
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '1')
@@ -431,7 +430,6 @@ def vaccinechatterbot():
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
 		
-		st.write('')
 		st.write('')
 		
 		place_holder = st.empty()
@@ -475,18 +473,15 @@ def recommend_questions(question_input, dataset):
 	similarity_score = similarity_score[1:6]
 	question_indices = [i[0] for i in similarity_score]
 	recommended=dataset[['Question','Answer']].iloc[question_indices]
-	recommendeddf=pd.DataFrame(recommended)
 	st.write("Looking for another answer? Try these questions:")
 
 	for i in range(0,5):
-		if st.button(recommendeddf.iloc[i]['Question']):
-			st.write(recommendeddf.iloc[i]['Answer'])		
+		questions = []
+		questions.append(recommended.iloc[i]['Question'])		
+	
+	rec = st.selectbox('Looking for another answer? Try these questions:', questions):	
 
-
-
-
-
-
-
-
+	for i in range(0,5):
+		if rec == recommended.iloc[i]['Question']:
+			st.write(recommended.iloc[i]['Answer'])
 
