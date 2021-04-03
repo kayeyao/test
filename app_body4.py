@@ -415,7 +415,7 @@ def covidchatterbot():
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '1')
 		
 		if st.button('Submit Response', key = '2'):
-			trainer.train([preprocessor(question), correct_response])
+			covidtrainer.train([preprocessor(question), correct_response])
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
@@ -437,7 +437,7 @@ def vaccinechatterbot():
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 		
 		if st.button('Submit Response', key = '2'):
-			trainer.train([preprocessor(question), correct_response])
+			vaccinetrainer.train([preprocessor(question), correct_response])
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
