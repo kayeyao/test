@@ -479,7 +479,7 @@ def recommend_questions(question_input, dataset):
 		questions = []
 		questions.append(recommended.iloc[i]['Question'])		
 	
-	rec = st.selectbox('Looking for another answer? Try these questions:', ('--',questions))	
+	rec = st.selectbox('Looking for another answer? Try these questions:', ('--',questions[0],questions[1],questions[2],questions[3],questions[4]))	
 
 	for i in range(0,5):
 		if rec == recommended.iloc[i]['Question']:
