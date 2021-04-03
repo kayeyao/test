@@ -363,22 +363,11 @@ trainer = ListTrainer(chatbot)
 #trainer.train(training_data)
 #chatbot.storage.drop()
 
-def get_feedback():
-    st.write('I am still learning. If the response does not answer your question, please input the correct response below.')
-    text = st.text_input('I am still learning.' , key = '1')
-
-    if 'yes' in text.lower():
-        return True
-    elif 'no' in text.lower():
-        return False
-    else:
-        print('Please type either YES or No')
-        return get_feedback()
-
 
 def get_text():
     input_text = st.text_input("Input Question: ", "Please type in your question.", key = '0')
     return input_text
+
 
 def chatterbot():
 	question = get_text()
