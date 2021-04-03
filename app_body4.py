@@ -443,8 +443,8 @@ def chatterbot():
 	session_state1 = SessionState.get(name="", covidbutton=False)
 	session_state2 = SessionState.get(name="", vaccinebutton=False)
 
-	covidbutton = col1.button('Questions on COVID-19')
-	vaccinebutton = col2.button('Questions on COVID-19 Vaccine')
+	covidbutton = col1.button('Questions on COVID-19', key = '0')
+	vaccinebutton = col2.button('Questions on COVID-19 Vaccine', key = '3')
 
 	if covidbutton:
 		session_state1.covidbutton = True
