@@ -399,7 +399,7 @@ def chatterbot():
 			if st.button('Submit Response'):
 				trainer.train([preprocessor(question), correct_response])
 				st.write('Response added to bot!')
-			
+				correct_response.empty()
 			
 
 
