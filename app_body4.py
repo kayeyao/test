@@ -478,7 +478,7 @@ def recommend_questions(question_input, dataset):
 	recommendeddf=pd.DataFrame(recommended)
 	st.write("Looking for another answer? Try these questions:")
 
-	for i in [:5]:
+	for i in range(0,5):
 		if st.button(recommendeddf.iloc[i]['Question']):
 			recommendeddf.iloc[i]['Answer']		
 
