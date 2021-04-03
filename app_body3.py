@@ -401,7 +401,7 @@ def chatterbot():
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 		
 
-
+chatbot.storage.drop()
 
 
 
