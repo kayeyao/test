@@ -319,28 +319,27 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
-covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+#vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+#covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+
+#covid_faq2 = []
+#vaccine_faq2 = []
+#for i in range(0, len(vaccine_faq)):
+#   vaccine_faq2.append(vaccine_faq['Question'][i])
+#   vaccine_faq2.append(vaccine_faq['Answer'][i])
+#for i in range(0, len(covid_faq)):
+#   covid_faq2.append(covid_faq['Question'][i])
+#   covid_faq2.append(covid_faq['Answer'][i])
 
 
-covid_faq2 = []
-vaccine_faq2 = []
-for i in range(0, len(vaccine_faq)):
-   vaccine_faq2.append(vaccine_faq['Question'][i])
-   vaccine_faq2.append(vaccine_faq['Answer'][i])
-for i in range(0, len(covid_faq)):
-   covid_faq2.append(covid_faq['Question'][i])
-   covid_faq2.append(covid_faq['Answer'][i])
-
-
-covidfaqclean=[]
-vaccinefaqclean=[]
-for i in range(0,len(covid_faq2)//2):
-   covidfaqclean.append(preprocessor(covid_faq2[2*i]).rstrip())
-   covidfaqclean.append(covid_faq2[2*i+1])
-for i in range(0,len(vaccine_faq2)//2):
-   vaccinefaqclean.append(preprocessor(vaccine_faq2[2*i]).rstrip())
-   vaccinefaqclean.append(vaccine_faq2[2*i+1])
+#covidfaqclean=[]
+#vaccinefaqclean=[]
+#for i in range(0,len(covid_faq2)//2):
+#   covidfaqclean.append(preprocessor(covid_faq2[2*i]).rstrip())
+#   covidfaqclean.append(covid_faq2[2*i+1])
+#for i in range(0,len(vaccine_faq2)//2):
+#   vaccinefaqclean.append(preprocessor(vaccine_faq2[2*i]).rstrip())
+#   vaccinefaqclean.append(vaccine_faq2[2*i+1])
 
 
 covidchatbot = ChatBot('COVIDBot', read_only = True,
@@ -383,12 +382,13 @@ vaccinechatbot = ChatBot('VaccineBot', read_only = True,
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-covid_training_data = covidfaqclean
-vaccine_training_data = vaccinefaqclean
+#covid_training_data = covidfaqclean
+#vaccine_training_data = vaccinefaqclean
 covidtrainer = ListTrainer(covidchatbot)
 vaccinetrainer = ListTrainer(vaccinechatbot)
-covidtrainer.train(covid_training_data)
-covidtrainer.train(vaccine_training_data)
+#covidtrainer.train(covid_training_data)
+#covidtrainer.train(vaccine_training_data)
+
 #covidchatbot.storage.drop()
 #vaccinechatbot.storage.drop()
 
@@ -401,12 +401,12 @@ def get_text():
 def covidchatterbot():
 	question = get_text()
 	if question == 'Please type in your question.':
-		st.text_area("Response:", value = '', height=200, max_chars=None, key = '1')
+		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
 	else:
 		response = covidchatbot.get_response(preprocessor(question))
         	
-		st.text_area("Response:", value = response, height=200, max_chars=None, key = '1')
+		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
 		
 		st.write('')
 		st.write('')
@@ -423,18 +423,18 @@ def covidchatterbot():
 def vaccinechatterbot():
 	question = get_text()
 	if question == 'Please type in your question.':
-		st.text_area("Response:", value = '', height=200, max_chars=None, key = '1')
+		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
 	else:
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
-		st.text_area("Response:", value = response, height=200, max_chars=None, key = '1')
+		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
 		
 		st.write('')
 		st.write('')
 		
 		place_holder = st.empty()
-		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
+		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '4')
 		
 		if st.button('Submit Response', key = '3'):
 			vaccinetrainer.train([preprocessor(question), correct_response])
@@ -443,7 +443,7 @@ def vaccinechatterbot():
 
 
 def chatterbot():
-	st.write('How can I help you?')
+	st.subheader('Hi! How can I help you?')
 	col1,col2,col3 = st.beta_columns([1,1,2])
 	session_state1 = SessionState.get(name="", covidbutton=False)
 	session_state2 = SessionState.get(name="", vaccinebutton=False)
