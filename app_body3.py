@@ -391,10 +391,9 @@ def chatterbot():
 		
 		st.write('I am still learning. Does this response answer your question?')
 		
-		col1, col2, col3 = st.beta_columns([1,1,5])	
+		col1, col2 = st.beta_columns(2)	
 		if col1.button('Yes'):
 			st.write('Thank you for your feedback.')
-			question = 'Please type in your question.'
 		
 		if col2.button('No'):
 			correct_response = st.text_input('Input Correct Response:' , key = '1')
@@ -402,7 +401,7 @@ def chatterbot():
 			if st.button('Submit Response'):
 				trainer.train([preprocessor(question), correct_response])
 				st.write('Response added to bot!')
-				question = 'Please type in your question.'				
+	
 
 
 
