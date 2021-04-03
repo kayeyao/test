@@ -393,13 +393,8 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 #vaccinechatbot.storage.drop()
 
 
-def get_text():
-    input_text = st.text_input("Input Question: ", "Please type in your question.", key = '0')
-    return input_text
-
-
 def covidchatterbot():
-	question = get_text()
+	question = st.text_input("Input Question: ", "Please type in your question.", key = '0')
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
@@ -421,7 +416,7 @@ def covidchatterbot():
 
 
 def vaccinechatterbot():
-	question = get_text()
+	question = st.text_input("Input Question: ", "Please type in your question.", key = '3')
 	if question == 'Please type in your question.':
 		st.text_area("Response:", value = '', height=200, max_chars=None, key = None)
 
@@ -436,10 +431,10 @@ def vaccinechatterbot():
 		place_holder = st.empty()
 		correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '4')
 		
-		if st.button('Submit Response', key = '3'):
+		if st.button('Submit Response', key = '5'):
 			vaccinetrainer.train([preprocessor(question), correct_response])
 			st.subheader('Response added to bot!')
-			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '3')
+			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '5')
 
 
 def chatterbot():
