@@ -107,26 +107,26 @@ def vaccine_info():
 
 	if st.button('When will the COVID-19 vaccine be available in the Philippines?'):	
 		st.write('The government is currently in the initial phase of vaccine rollout with the availability of Sinovac and AstraZeneca vaccines in the country. Likewise, the country is in the advanced stages of negotiations with the COVAX Facility and various other vaccine manufacturers.')
-		image = Image.open('vaccine tracker.png')
+		image = Image.open('Image/vaccine tracker.png')
 		st.image(image, caption='', width = 800)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
 
 	st.subheader('Know your COVID-19 vaccine brands!')
 	vaccine = st.selectbox('Select Vaccine Brand', ('--','Pfizer-BioNTech','Oxford-AstraZeneca','CoronaVac (Sinovac)','Sputnik V'))
 	if vaccine == 'Pfizer-BioNTech':
-		image = Image.open('pfizer.png')
+		image = Image.open('Image/pfizer.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')		
 	if vaccine == 'Oxford-AstraZeneca':
-		image = Image.open('astrazeneca.png')
+		image = Image.open('Image/astrazeneca.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
 	if vaccine == 'CoronaVac (Sinovac)':
-		image = Image.open('sinovac.png')
+		image = Image.open('Image/sinovac.png')
 		st.image(image, caption='', width = 600)
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')	
 	if vaccine == 'Sputnik V':
-		image = Image.open('sputnik.png')
+		image = Image.open('Image/sputnik.png')
 		st.image(image, caption='', width = 600)	
 		st.write('Source: Department of Health - https://doh.gov.ph/vaccines')
 
