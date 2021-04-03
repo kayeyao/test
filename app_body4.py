@@ -479,9 +479,9 @@ def recommend_questions(question_input, dataset):
 	for i in range(0,5):
 		questions.append(recommended.iloc[i]['Question'])		
 	
-	rec = st.selectbox('Looking for another answer? Try these questions:', ('--',questions))	
-#questions[0],questions[1],questions[2],questions[3],questions[4]
+	rec = st.selectbox('Looking for another answer? Try these questions:', ('--',questions[0],questions[1],questions[2],questions[3],questions[4]))	
+
 	for i in range(0,5):
-		if rec == recommended.iloc[i]['Question']:
+		if rec == questions[i]:
 			st.write(recommended.iloc[i]['Answer'])
 
