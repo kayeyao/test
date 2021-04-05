@@ -398,9 +398,9 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 def get_source(answer, dataset):
 	try:
 		answer_index = dataset[dataset['Answer'] == answer].index[0]
-		st.write(dataset.iloc[answer_index]['Source'])
+		st.write('Source: ' + dataset.iloc[answer_index]['Source'])
 	except:
-
+		print('')
 
 def covidchatterbot():
 	placeholder1 = st.empty()
