@@ -49,18 +49,7 @@ add_selectbox = st.sidebar.radio(
 )
 
 
-if add_selectbox == 'Information on COVID-19':
-	col1, col2, col3, col4 = st.beta_columns(4)	
-
-	image1 = Image.open('Image/B-Bawal-walang-mask.png')
-	col1.image(image1, caption='', width = 200)
-	image2 = Image.open('Image/I-isanitize-ang-mga-kamay.png')
-	col2.image(image2, caption='', width = 200)
-	image3 = Image.open('Image/D-dumistansya-ng-isang-metro.png')
-	col3.image(image3, caption='', width = 200)
-	image4 = Image.open('Image/A-alamin-ang-totoong-importmasyon.png')
-	col4.image(image4, caption='', width = 200)
-	
+if add_selectbox == 'Information on COVID-19':	
 	body.covid_info()
 
 
