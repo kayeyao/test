@@ -11,3 +11,7 @@ body {
 .stTextInput>div>div>input {
     color: #b39a86 ;
 }
+
+.stLineChart>line_chart {
+    background-color: #F5F5F5
+}
