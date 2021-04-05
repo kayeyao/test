@@ -35,7 +35,7 @@ st.sidebar.image(image, caption='', use_column_width=True)
 ## Create Select Box and options
 add_selectbox = st.sidebar.radio(
 	"Chatbot",
-	("Information on COVID-19","Information on COVID-19 Vaccines","COVID-19 Statistics","Chatbot")
+	("COVID-19 FAQs","COVID-19 Vaccine FAQs","COVID-19 Statistics","Chatbot")
 )
 
 
@@ -43,6 +43,7 @@ if add_selectbox == 'COVID-19 FAQs':
 	st.title("Frequently Asked Questions on COVID-19")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	
 	body.covid_info()
 
 
@@ -50,6 +51,7 @@ if add_selectbox == 'COVID-19 Vaccine FAQs':
 	st.title("Frequently Asked Questions on COVID-19 Vaccines")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	
 	body.vaccine_info()
 
 
@@ -57,6 +59,7 @@ if add_selectbox == 'COVID-19 Statistics':
 	st.title("COVID-19 Statistics")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	
 	body.covid_statistics_table()
 	st.sidebar.markdown('<div style="font-style: italic;">Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv</div>',unsafe_allow_html=True)
 	st.write('')	
