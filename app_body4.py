@@ -52,7 +52,7 @@ def covid_info():
 
 	if st.button('How long does it take to develop symptoms?'):	
 		st.write('The time from exposure to COVID-19 to the moment when symptoms begin is, on average, 5-6 days and can range from 1-14 days. This is why people who have been exposed to the virus are advised to remain at home and stay away from others, for 14 days, in order to prevent the spread of the virus, especially where testing is not easily available.')
-		st.write('Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19</div>',unsafe_allow_html=True)
+		st.markdown('<div style="font-style: italic;">Source: World Health Organization - https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19</div>',unsafe_allow_html=True)
 
 	if st.button('Who is most at risk of severe illness from COVID-19?'):	
 		st.write('People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. .\n')
