@@ -31,8 +31,6 @@ st.markdown("""<style>.css-1aumxhk {background-color: #efede8; background-image:
 image = Image.open('TalkingVac logo 2.png')
 st.sidebar.image(image, caption='', width=200)
 
-st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
-st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 
 ## Create Select Box and options
 add_selectbox = st.sidebar.radio(
