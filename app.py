@@ -73,9 +73,11 @@ if add_selectbox == 'QA Chatbot':
 	st.subheader("Your guide for you COVID-19 vaccine queries.")
 	st.markdown('<div style="font-style: italic;">This version is made using Chatterbot.</div>',unsafe_allow_html=True)
 	
-	st.subheader("Hi! How may I help you?")
+	
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+
+	st.subheader("Hi! How may I help you?")	
 	body.chatterbot()
 	
 st.sidebar.write("This is a capstone project of Eskwelabs Cohort 6 Data Science Fellows.")
