@@ -3,12 +3,6 @@ body {
     background-color: #efede8;
 }
 
-.stButton>button {
-    color: #c28710 ;
-    border-radius: 50%;
-    height: 3em;
-    width: 3em;
-}
 
 .stTextInput>div>div>input {
     color: #b39a86 ;
