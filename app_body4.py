@@ -395,6 +395,12 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 #covidchatbot.storage.drop()
 #vaccinechatbot.storage.drop()
 
+def get_source(answer, dataset):
+	try:
+		answer_index = dataset[dataset['Answer'] == answer].index[0]
+		st.write(dataset.iloc[answer_index]['Source'])
+	except:
+		continue
 
 def covidchatterbot():
 	placeholder1 = st.empty()
@@ -406,7 +412,8 @@ def covidchatterbot():
 		response = covidchatbot.get_response(preprocessor(question))
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
-		
+		get_source(response, covid_faq)
+
 		st.write('')
 		
 		place_holder = st.empty()
@@ -417,6 +424,7 @@ def covidchatterbot():
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '2')
 
+		st.write('')
 		recommend_questions(question, covid_faq)
 
 def vaccinechatterbot():
@@ -429,7 +437,8 @@ def vaccinechatterbot():
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
-		
+		get_source(response, covid_faq)
+
 		st.write('')
 		
 		place_holder = st.empty()
@@ -440,6 +449,7 @@ def vaccinechatterbot():
 			st.subheader('Response added to bot!')
 			correct_response = place_holder.text_input('I am still learning. If the response does not answer your question, please type in the correct response:' , '', key = '5')
 
+		st.write('')
 		recommend_questions(question, vaccine_faq)
 
 def chatterbot():
