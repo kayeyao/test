@@ -49,7 +49,8 @@ if add_selectbox == 'COVID-19 FAQs':
 
 
 if add_selectbox == 'COVID-19 Vaccine FAQs':
-	st.title("Frequently Asked Questions \non COVID-19 Vaccines")
+	st.title("Frequently Asked Questions")
+	st.title("On COVID-19 Vaccines")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	
