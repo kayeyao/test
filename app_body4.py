@@ -62,7 +62,7 @@ def covid_info():
 	st.subheader('COVID-19 Transmission & Prevention')
 	if st.button('How does COVID-19 spread?'):	
 		st.write('COVID-19 is transmitted from person to person via droplets, contact, and fomites. It is transmitted when one individual talks, sneezes, or coughs producing ‘droplets’ of saliva containing the COVID-19 virus. These droplets are then inhaled by another person. COVID-19 transmission usually occurs among close contacts -- including family members and healthcare workers. It is therefore important to maintain a distance of more than 1 meter away from any person who has respiratory symptoms.')
-		st.markdown('<div style="font-style: italic;">'Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs')
+		st.markdown('<div style="font-style: italic;">Source: Department of Health - https://doh.gov.ph/COVID-19/FAQs</div>',unsafe_allow_html=True)
 
 	if st.button('Can COVID-19 be caught from a person who has no symptoms?'):	
 		st.write('The risk of getting COVID-19 from a person without any signs and symptoms is very low. Remember, COVID-19 is only spread through respiratory droplets coughed by an infected person. Therefore, if an infected person does not cough, he/she most likely will not infect others. However, many infected persons only experience mild symptoms. This is particularly true at the early stages of the disease. It is therefore possible to get COVID-19 from an infected person with mild cough but is not feeling ill.')
