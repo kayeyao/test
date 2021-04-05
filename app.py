@@ -39,29 +39,29 @@ add_selectbox = st.sidebar.radio(
 )
 
 
-if add_selectbox == 'Information on COVID-19':	
-	st.title("Title")
+if add_selectbox == 'COVID-19 FAQs':	
+	st.title("Frequently Asked Questions on COVID-19")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.covid_info()
 
 
-if add_selectbox == 'Information on COVID-19 Vaccines':
-	st.title("Title")
+if add_selectbox == 'COVID-19 Vaccine FAQs':
+	st.title("Frequently Asked Questions on COVID-19 Vaccines")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.vaccine_info()
 
 
 if add_selectbox == 'COVID-19 Statistics':
-	st.title("Title")
+	st.title("COVID-19 Statistics")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.covid_statistics_table()
-	st.write('Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv')
+	st.sidebar.markdown('<div style="font-style: italic;">Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv</div>',unsafe_allow_html=True)
 	st.write('')	
 	body.covid_statistics()
-	st.write('Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv')
+	st.sidebar.markdown('<div style="font-style: italic;">Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv</div>',unsafe_allow_html=True)
 
 
 if add_selectbox == 'Chatbot':

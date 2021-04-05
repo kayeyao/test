@@ -256,7 +256,9 @@ def covid_stats(country,status,length):
 			data = country_stats_merged[country_stats_merged['location']==x][['total_vaccinations','date']].rename(columns={"total_vaccinations": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 
-	st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
+	#st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
+
+	fig = px.line(country_stats_graph, title='Life expectancy in Canada')
 
 
 def covid_statistics():
