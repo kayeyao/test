@@ -179,8 +179,6 @@ def vaccine_info():
 		st.markdown('<div style="font-style: italic;">Source: Department of Health - https://doh.gov.ph/vaccines</div>',unsafe_allow_html=True)
 
 def covid_statistics_table():
-	st.header('COVID-19 Statistics')
-
 	country = st.selectbox('Country', countries)
 	
 	country_stats = stats[stats['location'] == country].reset_index()
@@ -252,13 +250,18 @@ def covid_stats(country,status,length):
 			data = country_stats_merged[country_stats_merged['location']==x][['total_vaccinations','date']].rename(columns={"total_vaccinations": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 
-	st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
+	fig = st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
+	fig.update_layout(
+		margin=dict(l=20, r=20, t=20, b=20),
+    		paper_bgcolor="LightSteelBlue",
+		)
+
 
 	#fig = px.line(country_stats_graph, title='Life expectancy in Canada')
 
 
 def covid_statistics():
-	st.header('COVID-19 Cases + Vaccinations')
+	st.subheader('COVID-19 Cases, Deaths & Vaccinations')
 	col1, col2 = st.beta_columns(2)	
 
 	country = st.multiselect('Country', countries, default = ['World'])
