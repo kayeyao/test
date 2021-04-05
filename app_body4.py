@@ -33,8 +33,6 @@ countries = ('World', 'Afghanistan', 'Africa', 'Albania', 'Algeria', 'Andorra', 
 
 
 def covid_info():
-	st.header('Frequently Asked Questions on COVID-19')
-
 	st.subheader('COVID-19')	
 	if st.button('What is COVID-19?'):	
 		st.write('COVID-19 is the disease caused by a new coronavirus called SARS-CoV-2.  WHO first learned of this new virus on 31 December 2019, following a report of a cluster of cases of ‘viral pneumonia’ in Wuhan, People’s Republic of China.')
@@ -99,8 +97,6 @@ def covid_info():
 
 
 def vaccine_info():
-	st.header('Frequently Asked Questions on COVID-19 Vaccines')
-	
 	st.subheader('Available COVID-19 Vaccines')
 	if st.button('Is there a vaccine for COVID-19?'):	
 		st.write('Yes there are now several vaccines that are in use. The first mass vaccination programme started in early December 2020 and as of and as of 15 February 2021, 175.3 million vaccine doses have been administered. At least 7 different vaccines (3 platforms) have been administered.')

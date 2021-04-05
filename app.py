@@ -40,7 +40,7 @@ add_selectbox = st.sidebar.radio(
 
 
 if add_selectbox == 'COVID-19 FAQs':	
-	st.title("Frequently Asked Questions on COVID-19")
+	st.title("Frequently Asked Questions \non COVID-19")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	
@@ -48,7 +48,7 @@ if add_selectbox == 'COVID-19 FAQs':
 
 
 if add_selectbox == 'COVID-19 Vaccine FAQs':
-	st.title("Frequently Asked Questions on COVID-19 Vaccines")
+	st.title("Frequently Asked Questions \non COVID-19 Vaccines")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	
