@@ -447,7 +447,6 @@ def vaccinechatterbot():
 		recommend_questions(question, vaccine_faq)
 
 def chatterbot():
-	st.subheader('Hi! How can I help you?')
 	col1,col2,col3 = st.beta_columns([1,1,2])
 	session_state1 = SessionState.get(name="", covidbutton=False)
 	session_state2 = SessionState.get(name="", vaccinebutton=False)

@@ -35,7 +35,7 @@ st.sidebar.image(image, caption='', width=200)
 ## Create Select Box and options
 add_selectbox = st.sidebar.radio(
 	"Chatbot",
-	("COVID-19 FAQs","COVID-19 Vaccine FAQs","COVID-19 Statistics","Chatbot")
+	("COVID-19 FAQs","COVID-19 Vaccine FAQs","COVID-19 Statistics","QA Chatbot")
 )
 
 
@@ -69,8 +69,9 @@ if add_selectbox == 'COVID-19 Statistics':
 	st.sidebar.markdown('<div style="font-style: italic;">Source: Our World in Data - https://covid.ourworldindata.org/data/owid-covid-data.csv</div>',unsafe_allow_html=True)
 
 
-if add_selectbox == 'Chatbot':
-	st.title("Insert TalkingVac logo here")
+if add_selectbox == 'QA Chatbot':
+	st.title("Hi! How may I help you?")
+	st.sidebar.markdown('<div style="font-style: italic;">This version is made using Chatterbot.</div>',unsafe_allow_html=True)	
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.chatterbot()
