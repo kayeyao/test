@@ -22,7 +22,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
             
-local_css("files/style.css") #for styling, contains css for the background and the button style
+local_css("style.css") #for styling, contains css for the background and the button style
 
 
 
