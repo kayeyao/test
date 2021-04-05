@@ -70,12 +70,12 @@ if add_selectbox == 'COVID-19 Statistics':
 
 
 if add_selectbox == 'QA Chatbot':
-	st.title("Hi! How may I help you?")
+	st.subheader("Hi! How may I help you?")
 	st.markdown('<div style="font-style: italic;">This version is made using Chatterbot.</div>',unsafe_allow_html=True)
 	
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.chatterbot()
 	
-st.sidebar.markdown('<div style="font-style: italic;">This is a capstone project of Eskwelabs Cohort 6 Data Science Fellows.</div>',unsafe_allow_html=True)
+st.sidebar.write("This is a capstone project of Eskwelabs Cohort 6 Data Science Fellows.")
 st.sidebar.markdown("""<a style='display: block; text-align: left;color:#84a3a7;text-decoration: none;' href="https://talkingvac.herokuapp.com">Click here to know 	more.</a>""",unsafe_allow_html=True)
