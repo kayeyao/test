@@ -23,6 +23,7 @@ from nltk.stem import WordNetLemmatizer
 import SessionState
 import fuzzywuzzy
 from fuzzywuzzy import fuzz
+import plotly
 import plotly.figure_factory as ff
 import plotly.express as px
 
