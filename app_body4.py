@@ -322,8 +322,9 @@ def replace_tags(sentence):
 def preprocessor(sentence):
     return replace_tags(lemmatize(remove_stopwords(remove_punctuation(sentence.lower()))))
 
-vaccine_faq = pd.read_csv('Vaccine FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
-covid_faq = pd.read_csv('COVID FAQ.csv', encoding = "ISO-8859-1", index_col = 0)
+
+vaccine_faq = pd.read_csv('vaccine-faq_210405.csv', encoding = "ISO-8859-1", index_col = 0).reset_index()
+covid_faq = pd.read_csv('covid-faq_210405.csv', encoding = "ISO-8859-1", index_col = 0).reset_index()
 
 covid_faq2 = []
 vaccine_faq2 = []
@@ -385,15 +386,15 @@ vaccinechatbot = ChatBot('VaccineBot', read_only = True,
     trainer='chatterbot.trainers.ListTrainer'
 )
 
-#covid_training_data = covidfaqclean
-#vaccine_training_data = vaccinefaqclean
+covid_training_data = covidfaqclean
+vaccine_training_data = vaccinefaqclean
 covidtrainer = ListTrainer(covidchatbot)
 vaccinetrainer = ListTrainer(vaccinechatbot)
-#covidtrainer.train(covid_training_data)
-#covidtrainer.train(vaccine_training_data)
+covidtrainer.train(covid_training_data)
+covidtrainer.train(vaccine_training_data)
 
-#covidchatbot.storage.drop()
-#vaccinechatbot.storage.drop()
+covidchatbot.storage.drop()
+vaccinechatbot.storage.drop()
 
 def get_source(answer, dataset):
 	try:
@@ -437,7 +438,7 @@ def vaccinechatterbot():
 		response = vaccinechatbot.get_response(preprocessor(question))
         	
 		st.text_area("Response:", value = response, height=200, max_chars=None, key = None)
-		get_source(response, covid_faq)
+		get_source(response, vaccine_faq)
 
 		st.write('')
 		
