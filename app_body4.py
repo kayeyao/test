@@ -393,8 +393,8 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 covidtrainer.train(covid_training_data)
 covidtrainer.train(vaccine_training_data)
 
-covidchatbot.storage.drop()
-vaccinechatbot.storage.drop()
+#covidchatbot.storage.drop()
+#vaccinechatbot.storage.drop()
 
 def get_source(answer, dataset):
 	try:
