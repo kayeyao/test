@@ -169,11 +169,11 @@ def vaccine_info():
 	st.subheader('COVID-19 Vaccine Deployment')
 	if st.button('Is vaccination mandatory?'):	
 		st.write('Vaccination is not mandatory. But the government highly encourages the public to get vaccinated and be protected against preventable disease.')
-		st.write('Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers')
+		st.markdown('<div style="font-style: italic;">Source: Department of Health - https://doh.gov.ph/vaccines/Questions-and-Answers</div>',unsafe_allow_html=True)
 
 	if st.button('How much will I have to pay for the COVID-19 vaccine?'):	
 		st.write('Government will provide the vaccine for free. You do not need to pay for anything to be vaccinated.')
-		st.markdown('<div style="font-style: italic;">'Source: Department of Health - https://doh.gov.ph/vaccines')
+		st.markdown('<div style="font-style: italic;">Source: Department of Health - https://doh.gov.ph/vaccines</div>',unsafe_allow_html=True)
 
 	if st.button('Who gets the vaccine first?'):	
 		st.write('Since we need to ensure that our health system will be able to continuously care for all of us, medical frontliners will be the first to receive the vaccines.')
