@@ -4,7 +4,8 @@ body {
 }
 
 .stButton>button {
-    color: #D3D3D3 ;
+    color: #c28710 ;
+    background-color: #efede8
 }
 
 .stTextInput>div>div>input {
