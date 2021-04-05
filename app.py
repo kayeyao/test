@@ -70,7 +70,7 @@ if add_selectbox == 'COVID-19 Statistics':
 
 
 if add_selectbox == 'Chatbot':
-	st.title("Title")
+	st.title("Insert TalkingVac logo here")
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
 	body.chatterbot()
