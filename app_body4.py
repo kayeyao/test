@@ -399,7 +399,7 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 def get_source(answer, dataset):
 	try:
 		answer_index = dataset[dataset['Answer'] == str(answer)].index[0]
-		st.markdown('<div style="font-style: italic;">'Source: ' + dataset.iloc[answer_index]['Source']</div>',unsafe_allow_html=True)
+		st.markdown('<div style="font-style: italic;">Source: + dataset.iloc[answer_index]['Source']</div>',unsafe_allow_html=True)
 	except:
 		st.markdown('<div style="font-style: italic;">Source: </div>',unsafe_allow_html=True)
 
