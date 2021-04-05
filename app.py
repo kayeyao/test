@@ -81,7 +81,7 @@ if add_selectbox == 'QA Chatbot':
 	body.chatterbot()
 
 	
-st.sidebar.markdown("""<a style='display: block; text-align: left;color:#696969;text-decoration: none;'>.</a>""",unsafe_allow_html=True)	
-st.sidebar.markdown("""<a style='display: block; text-align: left;color:#696969;text-decoration: none;'>.</a>""",unsafe_allow_html=True)	
+st.sidebar.markdown("""<a style='display: block; text-align: left;color:#696969;text-decoration: none;'></a>""",unsafe_allow_html=True)	
+st.sidebar.markdown("""<a style='display: block; text-align: left;color:#696969;text-decoration: none;'></a>""",unsafe_allow_html=True)	
 st.sidebar.markdown("""<a style='display: block; text-align: left;color:#696969;text-decoration: none;'> TalkingVac is a capstone project of Eskwelabs Cohort 6 Data Science Fellows.</a>""",unsafe_allow_html=True)
 st.sidebar.markdown("""<a style='display: block; text-align: left;color:#84a3a7;text-decoration: none;' href="https://talkingvac.herokuapp.com">Click here to know 	more.</a>""",unsafe_allow_html=True)
