@@ -17,6 +17,26 @@ warnings.filterwarnings('ignore')
 
 st.title('COVID Chatbot')
 
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+            
+local_css("files/style.css") #for styling, contains css for the background and the button style
+
+
+
+st.markdown("""<style>.css-1aumxhk {background-color: #efede8; background-image: none; color: #efede8}</style>""", unsafe_allow_html=True) # changes background color of sidebar #
+
+
+
+st.title("Title")
+st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+
+
+
+
 ## Side Bar Information
 image = Image.open('logo/eskwelabs.png')
 st.sidebar.image(image, caption='', use_column_width=True)
@@ -58,3 +78,11 @@ if add_selectbox == 'COVID-19 Statistics':
 
 if add_selectbox == 'Chatbot':
 	body.chatterbot()
+	
+	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	st.markdown('<div style="color: #efede8;">.</div>',unsafe_allow_html=True) # space #
+	st.markdown('<div style="font-style: italic;">This is a capstone project of Eskwelabs Cohort 6 Data Science Fellows.</div>',unsafe_allow_html=True)
+	st.markdown("""<a style='display: block; text-align: left;color:#84a3a7;text-decoration: none;' href="https://talkingvac.herokuapp.com">Click here to know 	more.</a>""",unsafe_allow_html=True)
