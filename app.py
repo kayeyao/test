@@ -70,7 +70,7 @@ if add_selectbox == 'COVID-19 Statistics':
 
 
 if add_selectbox == 'QA Chatbot':
-	st.subheader("Your guide for you COVID-19 vaccine queries.")
+	st.subheader("Your guide for your COVID-19 vaccine queries.")
 	st.markdown('<div style="font-style: italic;">This version is made using Chatterbot.</div>',unsafe_allow_html=True)
 	
 	
