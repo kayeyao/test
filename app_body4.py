@@ -400,7 +400,7 @@ def get_source(answer, dataset):
 		answer_index = dataset[dataset['Answer'] == answer].index[0]
 		st.write(dataset.iloc[answer_index]['Source'])
 	except:
-		continue
+
 
 def covidchatterbot():
 	placeholder1 = st.empty()
