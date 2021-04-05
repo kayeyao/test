@@ -397,14 +397,11 @@ vaccinetrainer = ListTrainer(vaccinechatbot)
 #vaccinechatbot.storage.drop()
 
 def get_source(answer, dataset):
-	col1,col2 = st.beta_columns([1,6])
-	
 	try:
 		answer_index = dataset[dataset['Answer'] == str(answer)].index[0]
-		col1.markdown('<div style="font-style: italic;">Source: </div>',unsafe_allow_html=True)
-		col2.markdown('<div style="font-style: italic;">dataset.iloc[answer_index]['Source']</div>',unsafe_allow_html=True)
+		st.write('Source: ' + dataset.iloc[answer_index]['Source'])
 	except:
-		col1.markdown('<div style="font-style: italic;">Source: </div>',unsafe_allow_html=True)
+		st.write('Source:')
 
 def covidchatterbot():
 	placeholder1 = st.empty()
