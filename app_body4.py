@@ -23,9 +23,6 @@ from nltk.stem import WordNetLemmatizer
 import SessionState
 import fuzzywuzzy
 from fuzzywuzzy import fuzz
-import plotly
-import plotly.figure_factory as ff
-import plotly.express as px
 
 
 stats = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
@@ -253,13 +250,7 @@ def covid_stats(country,status,length):
 			data = country_stats_merged[country_stats_merged['location']==x][['total_vaccinations','date']].rename(columns={"total_vaccinations": x})
 			country_stats_graph =  country_stats_graph.merge(data, on = 'date', how = 'outer')
 
-	#st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
-
-	#fig = ff.create_distplot(
-	#st.plotly_chart(, use_container_width=True)
-
-	fig = px.line(country_stats_graph, x = 'date', title='Life expectancy in Canada')
-
+	st.line_chart(country_stats_graph.rename(columns={'date':'index'}).set_index('index'))
 
 def covid_statistics():
 	st.subheader('COVID-19 Cases, Deaths & Vaccinations')
