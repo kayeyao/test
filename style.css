@@ -3,6 +3,9 @@ body {
     background-color: #efede8;
 }
 
+.stButton>button {
+    color: #D3D3D3 ;
+}
 
 .stTextInput>div>div>input {
     color: #b39a86 ;
